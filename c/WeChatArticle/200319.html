@@ -1,0 +1,1441 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>200224 [学习]遇见GitHub（01）偶遇·初识-邂逅</title><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 30px; z-index: 3; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+/* CodeMirror Dracula theme */
+:root {
+  --bg-color: #fbfbfb;
+  --text-color: #333;
+  --md-char-color: #b4b4b4;
+  --meta-content-color: #757575;
+  --table-border-color: #b4b4b4;
+  --select-text-bg-color: #fbb6b7;
+  --primary-color: #db4d52;
+  --primary-btn-border-color: #be2f34;
+  --primary-btn-text-color: #333;
+  --window-border: 1px solid #16161a;
+  --active-file-bg-color: #16161a;
+  --active-file-text-color: inherit;
+  --active-file-border-color: #757575;
+  --active-search-item-bg-color: #23242b;
+  --side-bar-bg-color: #2e3235;
+  --item-hover-bg-color: #ececec;
+  --item-hover-text-color: inherit;
+  --search-select-text-color: #333;
+  --search-select-bg-color: #db4d5270;
+  --rawblock-edit-panel-bd: #d0d0d0;
+  --monospace: 'Fira Mono', 'Cousine', 'Consolas', monospace;
+  --node-fill: #fbfbfb;
+  --node-border: #0000001a;
+}
+
+html, body {
+  font-family: 'Avenir Next LT Pro', 'Lato', sans-serif;
+}
+
+body {
+  font-size: 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Adelle', 'Times New Roman', serif;
+}
+
+p {
+  margin: .5rem 0;
+}
+
+a {
+  color: #db4d52;
+}
+
+del {
+  color: #b4b4b4;
+}
+
+mark {
+  padding: 2px 1px;
+  background: #d3ffa4;
+  color: inherit;
+}
+
+blockquote {
+  position: relative;
+  margin: 1rem 0 1rem 2rem;
+  font-family: 'Adelle', 'Times New Roman', serif;
+}
+
+blockquote::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  height: 100%;
+  width: .25rem;
+  background: #db4d52;
+}
+
+code,
+.md-fences,
+tt {
+  font-family: 'Fira Mono', 'Cousine', 'Consolas', monospace;
+  font-size: 1rem;
+}
+
+code {
+  font-size: .9em;
+  border: 1px solid #0000001a;
+  border-radius: .25rem;
+  padding: 0 .125rem;
+  background: #00000008;
+}
+
+hr {
+  border-color: #b4b4b4;
+}
+
+table {
+  border: 1px solid #b4b4b4;
+  margin: 1rem 0;
+}
+
+table tr:nth-child(2n) {
+  background: #d0d0d0;
+}
+
+thead {
+  background: #d0d0d0;
+}
+
+td, th {
+  padding: .35rem .7rem;
+  border: 1px solid #b4b4b4;
+}
+
+#write {
+  position: static;
+  width: 90%;
+  max-width: 700px;
+  line-height: 1.6;
+  transform: none;
+}
+
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre {
+  width: auto;
+}
+
+#write h3::before, #write h4::before, #write h5::before, #write h6::before {
+  display: none;
+}
+
+#write h1::after, #write h2::after, #write h3::after, #write h4::after, #write h5::after, #write h6::after {
+  position: absolute;
+  right: calc(100% + .75em);
+  top: 0;
+  color: #b4b4b4;
+  font-size: 1rem;
+  font-weight: bold;
+  font-variant: 'small-caps';
+}
+
+#write h1 {
+  font-size: 1.8rem;
+  margin: 1rem 0;
+}
+
+#write h1::after {
+  content: 'H1';
+  top: .87rem;
+}
+
+#write h2 {
+  font-size: 1.4rem;
+  margin: .7rem 0;
+}
+
+#write h2::after {
+  content: 'H2';
+  top: .43rem;
+}
+
+#write h3 {
+  font-size: 1.2rem;
+  margin: .5rem 0;
+}
+
+#write h3::after {
+  content: 'H3';
+  top: .2rem;
+}
+
+#write h4 {
+  font-size: 1.1rem;
+  margin: .2rem 0;
+}
+
+#write h4::after {
+  content: 'H4';
+  top: .07rem;
+}
+
+#write h5, #write h6 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+#write h5::after {
+  content: 'H5';
+}
+
+#write h6::after {
+  content: 'H6';
+}
+
+#write ol, #write ul {
+  padding-left: 2rem;
+  margin: .5rem 0;
+}
+
+#write ol > li, #write ul > li {
+  color: #db4d52;
+}
+
+#write ol > li > *, #write ul > li > * {
+  color: #333;
+}
+
+#write ol > li > *:not(ol):not(ul), #write ul > li > *:not(ol):not(ul) {
+  padding-left: .25rem;
+}
+
+#write ul {
+  list-style-type: disc;
+}
+
+#write .md-task-list-item > input {
+  -webkit-appearance: initial;
+  display: block;
+  position: absolute;
+  border: 1px solid #b4b4b4;
+  border-radius: .25rem;
+  margin-top: .1rem;
+  margin-left: -1.8rem;
+  height: 1.2rem;
+  width: 1.2rem;
+  transition: background 0.3s;
+}
+
+#write .md-task-list-item > input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+#write .md-task-list-item > input:hover {
+  background: #d0d0d0;
+}
+
+#write .md-task-list-item > input[checked]::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  height: 60%;
+  width: 2px;
+  transform: rotate(40deg);
+  background: #333;
+}
+
+#write .md-task-list-item > input[checked]::after {
+  content: '';
+  position: absolute;
+  top: 46%;
+  left: 25%;
+  height: 30%;
+  width: 2px;
+  transform: rotate(-40deg);
+  background: #333;
+}
+
+#write .md-task-list-item > p {
+  transition: color 0.3s, opacity 0.3s;
+}
+
+#write .md-task-list-item.task-list-done > p {
+  color: #b4b4b4;
+  text-decoration: line-through;
+}
+
+#write .md-task-list-item.task-list-done > p > .md-emoji {
+  opacity: .5;
+}
+
+#write .md-task-list-item.task-list-done > p > .md-link > a {
+  opacity: .6;
+}
+
+#write .md-meta-block {
+  background-color: transparent;
+  border-bottom: 1px solid #b4b4b4;
+  padding-bottom: 1rem;
+  opacity: .8;
+}
+
+#write .md-table-edit {
+  border-top: 1px solid #b4b4b4;
+  margin-top: -29px !important;
+  padding: 3px 0;
+}
+
+#write .md-grid-board a.md-active, #write .md-grid-board a:hover {
+  background: #db4d52;
+  color: #b4b4b4;
+}
+
+#write .md-grid-board tr[row='1'] a.md-active, #write .md-grid-board tr[row='1'] a:hover {
+  background: #be2f34;
+  color: #b4b4b4;
+}
+
+#write .btn-group .btn + .btn {
+  margin-left: 0;
+}
+
+#write .btn-default.active, #write .btn-default.focus, #write .btn-default:active, #write .btn-default:focus, #write .btn-default:hover,
+.open > #write .btn-default.dropdown-toggle {
+  background: transparent;
+  color: inherit;
+}
+
+#write .typora-table-drag-area::after {
+  content: '';
+  position: absolute;
+  border: 2px solid #333;
+  opacity: 0;
+  transition: opacity .4s;
+}
+
+#typora-table-row-tracker #write .typora-table-drag-area::after,
+#typora-table-col-tracker #write .typora-table-drag-area::after {
+  opacity: 1;
+}
+
+#typora-table-row-tracker #write .typora-table-drag-area::after {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 100%;
+}
+
+#typora-table-col-tracker #write .typora-table-drag-area::after {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 0;
+}
+
+#write .md-toc-tooltip {
+  z-index: 10;
+}
+
+#write .md-toc-item {
+  font-size: 1.1rem;
+  color: var(--primary-btn-border-color);
+}
+
+#write .md-toc-h1 {
+  font-family: 'Adelle', 'Times New Roman', serif;
+  font-size: 1.3rem;
+}
+
+#write .md-toc-h2 {
+  font-size: 1.2rem;
+}
+
+#write .md-footnote {
+  font-family: 'Adelle', 'Times New Roman', serif;
+  font-size: .8em;
+  border: 1px solid #d0d0d0;
+  padding: 0 4px;
+  background: #f0f0f0;
+  color: #333;
+}
+
+#write .md-def-split {
+  min-width: 1ch;
+}
+
+#write .md-def-name::before, #write .md-def-name::after {
+  color: #757575;
+}
+
+#write .md-image > .md-meta {
+  color: #757575;
+}
+
+#write .md-rawblock-tooltip {
+  top: -1.5rem;
+  height: 1.5rem;
+  padding: .25rem;
+}
+
+#write .md-search-hit {
+  background: #db4d5230;
+  border-radius: .125rem;
+}
+
+#write .md-search-select {
+  background: #db4d5270;
+  border: 1px solid #9292928f;
+  padding: 0 1px;
+}
+
+#write pre[lang="mermaid"] .md-diagram-panel {
+  border-color: #0000001a;
+}
+
+#write pre[lang="mermaid"] tspan {
+  fill: #333;
+}
+
+#write pre[lang="mermaid"][mermaid-type="graph"] path.path ~ defs marker {
+  fill: #333;
+}
+
+#write pre[lang="mermaid"][mermaid-type="graph"] .cluster rect {
+  fill: transparent !important;
+  stroke: #0000001a !important;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section1 {
+  fill: transparent;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section2 {
+  fill: #d0d0d0;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section3 {
+  fill: transparent;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section4 {
+  fill: #d0d0d0;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section5 {
+  fill: transparent;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section6 {
+  fill: #d0d0d0;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section7 {
+  fill: transparent;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section8 {
+  fill: #d0d0d0;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section9 {
+  fill: transparent;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section10 {
+  fill: #d0d0d0;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section11 {
+  fill: transparent;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section12 {
+  fill: #d0d0d0;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section13 {
+  fill: transparent;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section14 {
+  fill: #d0d0d0;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section15 {
+  fill: transparent;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section16 {
+  fill: #d0d0d0;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section17 {
+  fill: transparent;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section18 {
+  fill: #d0d0d0;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .section19 {
+  fill: transparent;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .task {
+  fill: #bfbee2;
+  stroke: #9d9bce;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .task[class*="done"] {
+  fill: #d5d5d5;
+  stroke: #929292;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .task[class*="active"] {
+  fill: #bcc0ff;
+  stroke: #7f7ccd;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .task[class*="crit"] {
+  fill: #ebb5bd;
+  stroke: #d45c62;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .task[class*="Crit"] {
+  stroke: #d45c62;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] text {
+  fill: #333;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] text[class*="activeText"], #write pre[lang="mermaid"][mermaid-type="gantt"] text[class*="activeCritText"] {
+  fill: #333 !important;
+  font-weight: bold;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] text[class*="doneText"], #write pre[lang="mermaid"][mermaid-type="gantt"] text[class*="doneCritText"] {
+  fill: #b4b4b4 !important;
+}
+
+#write pre[lang="mermaid"][mermaid-type="gantt"] .grid .tick line {
+  stroke: #333;
+}
+
+.modal-content .modal-header, .modal-content .modal-footer {
+  border-color: #b4b4b4;
+}
+
+.modal-content input, .modal-content button.btn-default {
+  border-color: #b4b4b4;
+}
+
+.modal-content input {
+  background: transparent;
+}
+
+#typora-quick-open {
+  top: 32px;
+  width: 40%;
+  min-width: 420px;
+  transform: translateX(-50%);
+  margin-left: 0;
+}
+
+.mac-seamless-mode #typora-quick-open {
+  top: 50px;
+}
+
+#typora-quick-open #typora-quick-open-input input {
+  border-color: #db4d52;
+}
+
+#typora-quick-open .ty-quick-open-category-title {
+  height: auto;
+  padding-top: 4px;
+  padding-left: 12px;
+}
+
+#typora-quick-open .typora-quick-open-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#typora-quick-open .typora-quick-open-item:not(.active):hover {
+  background: #23242b;
+}
+
+#typora-quick-open .typora-quick-open-item-path {
+  margin-top: -2px;
+}
+
+#toc-dropmenu {
+  padding: .25em 0;
+  background: #fbfbfb;
+}
+
+#toc-dropmenu .outline-title-divider {
+  display: none;
+}
+
+.outline-label:hover {
+  text-decoration: none;
+}
+
+.ty-tooltip {
+  background: #fbfbfb;
+  color: #333;
+  border-color: #00000040;
+}
+
+.code-tooltip.md-f-tooltip, .code-tooltip.md-f-tooltip .md-arrow::after {
+  background: #222 !important;
+  color: #f0f0f0 !important;
+}
+
+.code-tooltip.md-f-tooltip a {
+  color: #db4d52;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container), .on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) *, .on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) ol, .on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) ul {
+  color: #b4b4b4 !important;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) img, .on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) .md-footnote, .on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) .md-emoji {
+  opacity: .5;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) mark {
+  background: #d0d0d0;
+}
+
+.on-focus-mode blockquote .md-end-block:not(.md-focus):not(.md-focus-container)::before {
+  opacity: .5;
+}
+
+.on-focus-mode li:not(.md-focus-container)::before {
+  opacity: .5;
+}
+
+#typora-sidebar {
+  border-right: 1px solid #19191c;
+}
+
+#typora-sidebar .sidebar-tabs {
+  font-family: 'Adelle', 'Times New Roman', serif;
+  border-bottom: 1px solid #19191c;
+}
+
+#typora-sidebar .file-list-item-file-name {
+  font-family: 'Adelle', 'Times New Roman', serif;
+  font-size: 1.2em;
+}
+
+#typora-sidebar #file-library-search-input {
+  background: #2e3235;
+}
+
+#typora-sidebar #file-library-search .file-list-item-file-name {
+  font-size: 1.1rem;
+}
+
+#typora-sidebar #file-library-search .ty-search-item.active {
+  background: #23242b;
+}
+
+#typora-sidebar .file-list-item-summary,
+#typora-sidebar .ty-search-item-line {
+  font-family: 'Avenir Next LT Pro', 'Lato', sans-serif;
+}
+
+#typora-sidebar .ty-file-search-match-text,
+#typora-sidebar .ty-outline-hit {
+  font-weight: bold;
+  background: transparent;
+}
+
+#typora-sidebar #outline-content {
+  line-height: 1.4em;
+}
+
+#typora-sidebar #outline-content .outline-h1 > .outline-item {
+  font-family: 'Adelle', 'Times New Roman', serif;
+}
+
+#typora-sidebar #outline-content .outline-h1 > .outline-item {
+  padding-left: 0em;
+}
+
+#typora-sidebar #outline-content .outline-h2 > .outline-item {
+  padding-left: 0.75em;
+}
+
+#typora-sidebar #outline-content .outline-h3 > .outline-item {
+  padding-left: 1.5em;
+}
+
+#typora-sidebar #outline-content .outline-h4 > .outline-item {
+  padding-left: 2.25em;
+}
+
+#typora-sidebar #outline-content .outline-h5 > .outline-item {
+  padding-left: 3em;
+}
+
+#typora-sidebar #outline-content .outline-h6 > .outline-item {
+  padding-left: 3.75em;
+}
+
+#typora-sidebar #outline-content .outline-item:hover {
+  background: #202020;
+}
+
+#typora-sidebar .outline-title-wrapper,
+#typora-sidebar .outline-item-wrapper.outline-h1 > .outline-item {
+  font-family: 'Adelle', 'Times New Roman', serif;
+}
+
+#typora-sidebar .file-library-node,
+#typora-sidebar .file-library-node .file-node-background {
+  transition: background .4s;
+}
+
+#typora-sidebar .file-tree-node {
+  padding-left: .75em;
+}
+
+#typora-sidebar .file-tree-node i, #typora-sidebar .file-tree-node span {
+  vertical-align: middle;
+}
+
+#typora-sidebar .file-tree-node .file-node-icon, #typora-sidebar .file-tree-node .file-node-title {
+  margin-left: 2px;
+}
+
+#typora-sidebar .file-tree-node .file-tree-node:not(.file-library-file-node) > .file-node-content {
+  font-style: italic;
+}
+
+#typora-sidebar .file-tree-node.file-node-root > .file-node-content {
+  font-weight: bold;
+  font-style: italic;
+}
+
+#typora-sidebar .file-tree-node.file-library-file-node:not(.active):hover .file-node-background,
+#typora-sidebar .file-list-item.file-library-node:not(.active):hover {
+  background: #202020;
+}
+
+#typora-sidebar .file-tree-node.file-library-file-node.active .file-node-background,
+#typora-sidebar .file-list-item.file-library-file-node.active {
+  border-left: 5px solid #db4d52;
+}
+
+#typora-sidebar .blink-area {
+  animation: none;
+}
+
+#typora-sidebar #ty-sidebar-footer {
+  border-top: 1px solid #19191c;
+}
+
+#typora-sidebar #ty-sidebar-footer .sidebar-footer-item {
+  transition: background .3s;
+}
+
+#typora-sidebar #ty-sidebar-footer .sidebar-footer-item:hover {
+  background: #202020;
+}
+
+#typora-sidebar #ty-sidebar-footer #sidebar-files-menu .menuitem-group-label {
+  font-style: italic;
+}
+
+#typora-sidebar #ty-sidebar-footer #sidebar-files-menu .show + .menuitem-group-label.show {
+  border-color: #202020;
+}
+
+#typora-sidebar #ty-sidebar-footer #sidebar-files-menu li > a:hover {
+  background: #202020;
+}
+
+#typora-sidebar #ty-sidebar-footer #sidebar-files-menu .ty-side-sort-btn {
+  cursor: pointer;
+}
+
+#typora-sidebar #ty-sidebar-footer #sidebar-files-menu .ty-side-sort-btn.active, #typora-sidebar #ty-sidebar-footer #sidebar-files-menu .ty-side-sort-btn:hover {
+  color: #db4d52;
+}
+
+#typora-sidebar #ty-sidebar-footer #sidebar-files-menu .ty-side-sort-btn.active {
+  background: #16161a;
+}
+
+.dropdown-menu:not(.megamenu-menu-list):not(#sidebar-files-menu) {
+  background: #fbfbfb;
+  color: #333;
+}
+
+.dropdown-menu:not(.megamenu-menu-list):not(#sidebar-files-menu) .divider {
+  border-color: #e6e6e6;
+}
+
+.dropdown-menu:not(.megamenu-menu-list):not(#sidebar-files-menu) .active a,
+.dropdown-menu:not(.megamenu-menu-list):not(#sidebar-files-menu) .has-extra-menu.active a {
+  background: #e6e6e6 !important;
+}
+
+.dropdown-menu:not(.megamenu-menu-list):not(#sidebar-files-menu) .has-btn-submenu .menu-style-btn.active {
+  background: #333;
+  color: #fbfbfb;
+  cursor: pointer;
+}
+
+#footer-word-count-info .ty-footer-word-count-all tr:hover,
+#ty-spell-check-dict-missing-menu li:hover {
+  background: #e6e6e6 !important;
+}
+
+.ty-spell-check-panel-item.ty-active, .ty-spell-check-panel-item:hover {
+  background: #e6e6e6 !important;
+}
+
+.btn-default:hover {
+  background: #d0d0d0;
+}
+
+footer.ty-footer {
+  border-top: 0;
+}
+
+.typora-sourceview-on #toggle-sourceview-btn {
+  background: #fbfbfb;
+}
+
+.footer-item:hover {
+  background: #e6e6e6 !important;
+}
+
+#outline-btn:hover {
+  color: inherit;
+}
+
+.form-control:focus {
+  border-color: #db4d52;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 2px #db4d52;
+}
+
+.megamenu-opened header {
+  background-image: none;
+}
+
+#top-titlebar, #top-titlebar * {
+  color: inherit;
+}
+
+#megamenu-content {
+  padding-top: 28px;
+  background: #fbfbfb;
+  color: #333;
+}
+
+#megamenu-content .long-btn {
+  border-color: #9292928f;
+  transition: border-color .4s;
+}
+
+#megamenu-content .long-btn:hover {
+  border-color: #db4d52;
+  background: #d8d8d8;
+  color: inherit !important;
+}
+
+#megamenu-menu-panel:not(:first-of-type) {
+  margin-top: 48px;
+}
+
+#recent-file-panel-action-btn {
+  background: inherit;
+  border-color: #9292928f;
+  transition: all .4s;
+}
+
+#recent-file-panel-action-btn:hover {
+  border-color: #db4d52;
+  background: #d8d8d8;
+  color: inherit;
+}
+
+#recent-document-table {
+  background-color: inherit;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+  background-color: inherit;
+}
+
+#recent-file-panel tbody tr:hover {
+  background-color: #d8d8d8 !important;
+}
+
+#recent-file-panel tbody tr:hover td:nth-child(1) {
+  color: inherit;
+}
+
+#megamenu-menu-sidebar {
+  background-color: #2e3235;
+  color: #333;
+}
+
+.megamenu-menu-header,
+.megamenu-menu-list li:not(.saved) a {
+  transition: all .4s;
+}
+
+.megamenu-menu-header {
+  border-bottom: 1px solid #16161a;
+}
+
+.megamenu-menu-header:hover {
+  background: #161819;
+}
+
+.megamenu-menu-list li:not(.saved) a:not(.active):hover,
+.megamenu-menu-list li a.active {
+  background: #101010 !important;
+}
+
+#m-saved {
+  background: inherit;
+  color: inherit;
+}
+
+#megamenu-menu-list {
+  margin: 0;
+}
+
+.theme-preview-div {
+  transition: all .4s;
+}
+
+.theme-preview-div:hover {
+  border: 4px solid #be2f34;
+}
+
+.theme-preview-div.active, .theme-preview-div.active:hover {
+  border: 4px solid #db4d52;
+}
+
+.theme-preview-div.active i {
+  color: #db4d52;
+}
+
+.ty-preferences .window {
+  background: #fbfbfb;
+}
+
+.ty-preferences .nav-group-item {
+  background: transparent;
+  color: #333;
+  cursor: pointer;
+}
+
+.ty-preferences .nav-group-item:hover {
+  background: #d8d8d8;
+  color: inherit;
+}
+
+.ty-preferences .nav-group-item:active, .ty-preferences .nav-group-item.active {
+  background: #d0d0d0;
+  color: inherit;
+}
+
+.ty-preferences .btn-default {
+  background: transparent;
+  color: inherit;
+  border-color: #9292928f;
+  cursor: pointer;
+}
+
+.ty-preferences .btn-default:hover {
+  border-color: #db4d52;
+  background: #d8d8d8;
+  color: inherit;
+}
+
+.ty-preferences .btn-default:active, .ty-preferences .btn-default.active {
+  background: #d0d0d0;
+}
+
+.ty-preferences select,
+.ty-preferences ul.dropdown-menu {
+  border-color: #9292928f;
+  background: #fbfbfb;
+}
+
+.ty-preferences ul.dropdown-menu li {
+  background: #fbfbfb;
+}
+
+.ty-preferences ul.dropdown-menu li:hover {
+  background: #d8d8d8;
+}
+
+.cm-s-typora-default .cm-s-inner.CodeMirror-line {
+  border: 0 !important;
+}
+
+#write > p:first-child:empty {
+  position: static;
+}
+
+#write > p:first-child:not(:only-child)::before, #write > p:only-child::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("file:///C://Users//jx003//AppData//Roaming//Typora/themes/ursine/night.png") no-repeat 45% 90% transparent;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  opacity: 0;
+}
+
+#write > p:only-child:empty::before {
+  opacity: 1;
+}
+
+@media print {
+  #write ol > li,
+  #write ul > li {
+    color: #333;
+  }
+}
+
+/* CodeMirror 3024 Day theme */
+.cm-s-inner {
+  padding: .5rem .2rem;
+  border: 1px solid #d0d0d0 !important;
+  border-radius: .25rem;
+}
+
+.cm-s-inner.CodeMirror, .cm-s-inner .CodeMirror-gutters {
+  background-color: #f7f7f7 !important;
+  color: #3a3432 !important;
+  border: none;
+}
+
+.cm-s-inner .CodeMirror-gutters {
+  width: 5ch;
+  color: #6d8a88;
+}
+
+.cm-s-inner .CodeMirror-cursor {
+  border-left: solid thin #5c5855 !important;
+}
+
+.cm-s-inner .CodeMirror-linenumber {
+  width: 4ch !important;
+  color: #807d7c;
+}
+
+.cm-s-inner .CodeMirror-line::selection, .cm-s-inner .CodeMirror-line::-moz-selection,
+.cm-s-inner .CodeMirror-line > span::selection,
+.cm-s-inner .CodeMirror-line > span::-moz-selection,
+.cm-s-inner .CodeMirror-line > span > span::selection,
+.cm-s-inner .CodeMirror-line > span > span::-moz-selection {
+  background: #d6d5d4;
+}
+
+.cm-s-inner span.cm-comment {
+  color: #cdab53;
+}
+
+.cm-s-inner span.cm-string, .cm-s-inner span.cm-string-2 {
+  color: #f2b01d;
+}
+
+.cm-s-inner span.cm-number {
+  color: #a16a94;
+}
+
+.cm-s-inner span.cm-variable {
+  color: #01a252;
+}
+
+.cm-s-inner span.cm-variable-2 {
+  color: #01a0e4;
+}
+
+.cm-s-inner span.cm-def {
+  color: #e8bbd0;
+}
+
+.cm-s-inner span.cm-operator {
+  color: #ff79c6;
+}
+
+.cm-s-inner span.cm-keyword {
+  color: #db2d20;
+}
+
+.cm-s-inner span.cm-atom {
+  color: #a16a94;
+}
+
+.cm-s-inner span.cm-meta {
+  color: inherit;
+}
+
+.cm-s-inner span.cm-tag {
+  color: #db2d20;
+}
+
+.cm-s-inner span.cm-attribute {
+  color: #01a252;
+}
+
+.cm-s-inner span.cm-qualifier {
+  color: #50fa7b;
+}
+
+.cm-s-inner span.cm-property {
+  color: #01a252;
+}
+
+.cm-s-inner span.cm-builtin {
+  color: #50fa7b;
+}
+
+.cm-s-inner span.cm-variable-3, .cm-s-inner span.cm-type {
+  color: #ffb86c;
+}
+
+.cm-s-inner span.cm-bracket {
+  color: #3a3432;
+}
+
+.cm-s-inner span.cm-link {
+  color: #a16a94;
+}
+
+.cm-s-inner span.cm-error {
+  background: #db2d20;
+  color: #5c5855;
+}
+
+.md-fences.md-focus .cm-s-inner .CodeMirror-activeline-background {
+  background: #e8f2ff;
+}
+
+.cm-s-inner .CodeMirror-matchingbracket {
+  text-decoration: underline;
+  color: #a16a94 !important;
+}
+
+.cm-s-inner .CodeMirror-selected, .cm-s-inner .CodeMirror-selectedtext {
+  background: #d5e2f4 !important;
+  color: inherit;
+  text-shadow: none;
+}
+
+#fences-auto-suggest .active {
+  background: #d0d0d0;
+}
+
+#write .code-tooltip {
+  bottom: initial;
+  top: calc(100% - 1px);
+  background: #f7f7f7;
+  border: 1px solid #d0d0d0;
+  border-top: 0;
+}
+
+.auto-suggest-container {
+  border-color: #b4b4b4;
+}
+
+.auto-suggest-container .autoComplt-hint.active {
+  background: #b4b4b4;
+  color: inherit;
+}
+
+table tr:nth-child(2n) {
+  background: #e6e6e6;
+}
+
+sup.md-footnote {
+  background: #ddd;
+}
+
+#typora-sidebar * {
+  color: #f0f0f0;
+}
+
+#typora-sidebar * .file-tree-rename-input {
+  color: #333;
+}
+
+#typora-sidebar * code {
+  background: #0000001a;
+  border-color: #ffffff26;
+}
+
+#typora-quick-open * {
+  color: #f0f0f0;
+}
+
+#megamenu-menu-sidebar {
+  color: #f0f0f0 !important;
+}
+
+.megamenu-menu-list li:not(.saved) a:not(.active):hover,
+.megamenu-menu-list li a.active {
+  color: #f0f0f0 !important;
+}
+
+#write > p:first-child:not(:only-child)::before, #write > p:only-child::before {
+  background: url("file:///C://Users//jx003//AppData//Roaming//Typora/themes/ursine/day.png") no-repeat 55% 90% transparent;
+  background-size: cover;
+}
+
+
+ .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export os-windows' >
+<div  id='write'  class = 'is-node'><p><strong><span>目录 · 大纲</span></strong></p><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n3131"><a class="md-toc-inner" href="#前言">前言</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n3376"><a class="md-toc-inner" href="#一-为什么要学习github">一. 为什么要学习GitHub</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n3200"><a class="md-toc-inner" href="#二-git和github">二. Git和GitHub</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n3201"><a class="md-toc-inner" href="#-什么是git">* 什么是Git</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n3375"><a class="md-toc-inner" href="#-什么是github">* 什么是GitHub</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n3374"><a class="md-toc-inner" href="#三-安装git">三. 安装Git</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n3373"><a class="md-toc-inner" href="#1-下载git">1. 下载Git</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n3371"><a class="md-toc-inner" href="#2-安装git">2. 安装Git</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n3370"><a class="md-toc-inner" href="#3-确认安装是否成功">3. 确认安装是否成功</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n3369"><a class="md-toc-inner" href="#四-配置git-本地设置）">四. 配置Git （本地设置）</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n3238"><a class="md-toc-inner" href="#-配置全局用户名和邮箱">* 配置全局用户名和邮箱</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n3239"><a class="md-toc-inner" href="#--若不进行配置会发生什么的说明">- 若不进行配置会发生什么的说明</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n3368"><a class="md-toc-inner" href="#--配置步骤">- 配置步骤</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n3367"><a class="md-toc-inner" href="#--扩展命令">- 扩展命令</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n3366"><a class="md-toc-inner" href="#五-配置github-ssh-key关联线上仓库github的线上账号）">五. 配置GitHub SSH key（关联线上仓库GitHub的线上账号）</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n3267"><a class="md-toc-inner" href="#-准备和说明">* 准备和说明</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n3364"><a class="md-toc-inner" href="#-配置ssh-key步骤">* 配置SSH key步骤</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n3336"><a class="md-toc-inner" href="#-总结和说明">* 总结和说明</a></span></p></div><br><br><br><h1><a name="前言" class="md-header-anchor"></a><span>前言</span></h1><p><span> </span>&emsp;<span> </span>&nbsp;&nbsp;<span>《遇见GitHub》系列从今天开始更新（</span><mark><strong><span>后续更新时间：看心情</span></strong></mark><span>）</span></p><p><span> </span>&emsp;&emsp;<span>这个系列一共会有三篇文章，在发布后，可能会不定期修改以完善其内容，下面是关于这个系列的三篇文章内容的安排：</span></p><ol start='' ><li><p><span>遇见GitHub（01）偶遇·初识-邂逅</span></p><blockquote><p>&emsp;<span>主要介绍一些基础知识。</span></p><p>&emsp;<span>为什么要学习GitHub？什么是Git？什么是GitHub？他们有什么关系？GitHub有什么有趣的东西？有什么魅力？</span></p><p>&emsp;<span>Git的安装与设置（设置主要是使其关联登录到GitHub）</span></p><p><span>...</span></p></blockquote></li><li><p><span>遇见GitHub（02）相识·相知-感觉</span></p><blockquote><p>&emsp;<span>Git的基本使用方法。</span></p><p>&emsp;<span>如何新建一个仓库？如何将本地的仓库推（提交）到GitHub？如何修改GitHub上已有的仓库？如何提交更新？如何（拉）下载GitHub上的仓库？</span></p><p><span>...</span></p></blockquote></li><li><p><span>遇见GitHub（03）了解·深入-热爱</span></p><blockquote><p>&emsp;<span>Git和GitHub的高级进阶知识，深入学习。</span></p><p>&emsp;<span>Git的后悔药（回退版本，即提交了一些错误的内容，想要回到提交之前的状态。有两种方法）。</span></p><p>&emsp;<span>什么是Git分支？如何使用分支？</span></p><p><span>...</span></p></blockquote></li></ol><p>&nbsp;</p><h1><a name="一-为什么要学习github" class="md-header-anchor"></a><span>一. 为什么要学习GitHub</span></h1><ul><li><p><span>正确认识GitHub</span></p><blockquote><p><span>		</span><span>首先需要认清一个概念，GitHub并不是程序员的专属，其中有许多资源对于很多人都适用，包括某些高校官方的学习资料、许多知名企业的开源项目（如Ali、Microsoft等）、开源的软件（这个涵盖就很多了你懂的，不便多说），甚至你还能找到 中华新华字典之类的项目。</span></p><p><span>		</span><span>在此致敬一直为开源事业奉献的人们！</span></p><p><span>		</span><span>总之你会发现许多有趣的项目，各行各业的都有。</span></p><p><span>		</span><span>你也可以将你自己的GitHub用作私人的存储库，私人云盘，私人博客。</span></p></blockquote></li><li><p><span>分享几个有趣的项目</span></p><blockquote><p><a href='https://github.com/QSCTech/zju-icicles'><span>浙江大学课程攻略共享计划</span></a></p><p><a href='https://github.com/USTC-Resource/USTC-Course'><span>中国科学技术大学计算机学院课程资源</span></a></p><p><a href='https://github.com/lib-pku/libpku'><span>贵校课程资料民间整理</span></a></p><p><a href='https://github.com/martinwu42/project-hover'><span>气垫船计划——免费、去中心化的北京大学往年题资料库</span></a></p><p><a href='https://github.com/EECS-PKU-XSB/Shared-learning-materials'><span>北京大学信科学生会学术部资料库</span></a></p><p><a href='https://github.com/tongtzeho/PKUCourse'><span>北大计算机课程大作业</span></a></p><p><a href='https://github.com/PKUanonym/REKCARC-TSC-UHT'><span>清华大学计算机系课程攻略</span></a></p><p><a href='https://github.com/zjdx1998/seucourseshare'><span>东南大学课程共享计划</span></a></p><p><a href='https://github.com/CoolPhilChen/SJTU-Courses/'><span>上海交通大学课程资料分享</span></a></p><p><a href='https://github.com/sysuexam/SYSU-Exam'><span>中山大学课程资料分享</span></a></p><p><a href='https://github.com/idealclover/NJU-Review-Materials'><span>南京大学课程复习资料</span></a></p><p><a href='https://github.com/CooperNiu/ZZU-Courses-Resource'><span>郑州大学课程复习资料</span></a></p><p><a href='https://github.com/brenner8023/gdut-course'><span>广东工业大学计算机学院课程攻略</span></a></p><p>&nbsp;</p><p><a href='https://github.com/chinese-poetry/chinese-poetry'><span>最全中华古诗词数据库</span></a></p><p><a href='https://github.com/pwxcoo/chinese-xinhua'><span>中华新华字典数据库</span></a></p><p><a href='https://github.com/iptv-org/iptv'><span>全球电视直播频道 iptv</span></a></p><p>&nbsp;</p><p><span>... 更多的有趣项目，敬请探索</span></p></blockquote></li><li><p><span>大家也可以关注我的GitHub中的stars（加星收藏的）项目  有许多有趣的项目</span></p><blockquote><p><a href='https://github.com/CandyMuj?tab=stars'><span>我的GitHub stars - CandyMuj</span></a></p></blockquote></li><li><p><span>为什么要学习GitHub</span></p><blockquote><p><span>		</span><span>经过以上所说的可得出为何需要学习GitHub，GitHub是一个可以发现无限可能地方，你可以使用GitHub学习，可以在上面寻找有意思的开源软件，亦可用作私人仓库（云盘），私人博客，部署静态网页等。。。</span></p><p><span>		</span><span>无限可能，期待你的探索...</span></p></blockquote></li></ul><p>&nbsp;</p><p><b style = 'color:red'><span>！！！</span><span>*</span><span>*</span><span>*</span><span> 注意 </span><span>*</span><span>*</span><span>*</span><span> ！！！</span></b></p><blockquote><p><span style = 'color:red'><span>GitHub属于国外的网站，且不需要科学手段即可正常访问，但是由于自己的网络原因或其他不可知原因，可能访问较慢！如果使用科学手段即可快速访问，虽然不使用科学手段也可以访问，但是如果使用了科学手段可以使访问速度显著提升。</span></span ></p></blockquote><p>&nbsp;</p><h1><a name="二-git和github" class="md-header-anchor"></a><span>二. Git和GitHub</span></h1><h2><a name="-什么是git" class="md-header-anchor"></a><span>* 什么是Git</span></h2><blockquote><p><em><span>Git</span></em><span> 是目前世界上最先进的开源的分布式版本控制系统（没有之一）。</span></p><p><span>版本控制是指对软件开发过程中各种程序代码、配置文件及说明文档等文件变更的管理，是软件配置管理的核心思想之一。</span></p></blockquote><p>&nbsp;</p><h2><a name="-什么是github" class="md-header-anchor"></a><span>* 什么是GitHub</span></h2><blockquote><p><em><span>GitHub</span></em><span>是一个面向开源及私有软件项目的托管平台，因为只支持git 作为唯一的版本库格式进行托管，故名</span><em><span>GitHub</span></em><span>。</span></p><p><span>简单来说GitHub是基于Git的一个线上仓库，当然他除了Git代码仓库托管及基本的 Web管理界面以外，还提供了订阅、讨论组、文本渲染、在线文件编辑器、协作图谱（报表）、代码片段分享（Gist）等功能。</span></p><p><span>上方所说的同样是Git和GitHub之间的关系</span></p></blockquote><p>&nbsp;</p><h1><a name="三-安装git" class="md-header-anchor"></a><span>三. 安装Git</span></h1><blockquote><p><span>上方说到，GitHub实质是基于Git的一个线上仓库，所以我们需要先使用Git的本地仓库，然后再将我们的本地仓库的内容或变更推送到线上。这也是使用GitHub的最基本的流程。</span></p></blockquote><p>&nbsp;</p><h2><a name="1-下载git" class="md-header-anchor"></a><span>1. 下载Git</span></h2><ul><li><p><span>下载地址：</span><a href='https://git-scm.com/downloads'><span>https://git-scm.com/downloads</span></a></p><p><span>		</span><span>在页面中选择适合自己的版本进行下载，由于我使用的是Windows，且Windows也是大部分人使用的系统，所以我就使用WIndows版本进行讲解。</span></p><p><img src="https://s1.ax1x.com/2020/03/17/8a91Ff.png" referrerpolicy="no-referrer" alt="下载Git"></p></li></ul><p>&nbsp;</p><h2><a name="2-安装git" class="md-header-anchor"></a><span>2. 安装Git</span></h2><ul><li><p><span>下载后直接双击即可安装</span></p><p><img src="https://s1.ax1x.com/2020/03/17/8am2o4.png" referrerpolicy="no-referrer" alt="下载的文件"></p></li><li><p><span>安装过程直接下一步即可</span></p><p><b style = 'color:red'><span>注意：</span></b><span style = 'color:red'><span>除了可修改安装路径，其余的所有选项 </span><strong><span>默认</span></strong><span>即可，请勿修改！！！</span></span></p><p><span>建议只更改第二步（点击了第一个</span><em><span>“Next”</span></em><span>后的那一步），可修改默认的安装位置，也可以不修改，git作为版本控制软件可以即使安装在C盘也是不错的选择</span></p><p><img src="https://s1.ax1x.com/2020/03/17/8am0Wn.png" alt="修改默认安装路径" style="zoom: 80%;" /></p></li></ul><p>&nbsp;</p><h2><a name="3-确认安装是否成功" class="md-header-anchor"></a><span>3. 确认安装是否成功</span></h2><ul><li><p><strong><span>在桌面或资源管理器任意位置右键</span></strong><span>，你会发现右键菜单多了两个如下图的选项，那么你就安装成功了</span></p><p><img src="https://s1.ax1x.com/2020/03/17/8auKgI.png" referrerpolicy="no-referrer" alt="右键菜单"></p></li><li><p><span>您也可以在Windows的命令管理器（cmd）或者直接选择上方右键菜单的&quot;Git Bash Here&quot;打开Git的命令窗口，键入命令 </span><code>git --version</code><span> 如果出现了Git的版本信息（如下图所示）那么是必定安装成功了的</span></p><p><img src="https://s1.ax1x.com/2020/03/17/8aKVs0.png" referrerpolicy="no-referrer" alt="查看Git的版本"></p></li></ul><p>&nbsp;</p><h1><a name="四-配置git-本地设置）" class="md-header-anchor"></a><span>四. 配置Git （本地设置）</span></h1><h2><a name="-配置全局用户名和邮箱" class="md-header-anchor"></a><span>* 配置全局用户名和邮箱</span></h2><h3><a name="--若不进行配置会发生什么的说明" class="md-header-anchor"></a><span>- 若不进行配置会发生什么的说明</span></h3><blockquote><ul><li><span>若不进行配置，那么你在进行本地仓库的提交时都将会报错，并提示你如何设置，如图所示</span></li></ul><p><img src="https://s1.ax1x.com/2020/03/18/80l7VI.png" referrerpolicy="no-referrer" alt="不配置用户名"></p></blockquote><p>&nbsp;</p><h3><a name="--配置步骤" class="md-header-anchor"></a><span>- 配置步骤</span></h3><blockquote><ul><li><span>在右键菜单中选择&quot;Git Bash Here&quot;打开命令窗口依次执行如下几句</span></li></ul><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 8px; left: 7.79688px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">git config --global user.name "Your Name"</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">git config --global user.email "you@example.com"</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 44px;"></div><div class="CodeMirror-gutters" style="display: none; height: 44px;"></div></div></div></pre><p><span>将</span><strong><code>Your Name</code></strong><span>替换为</span><strong><code>你的英文名</code></strong><span>，可随意填写，建议与GitHub的账号用户名一致</span></p><p><span>将</span><strong><code>you@example.com</code></strong><span>替换为</span><strong><code>你的邮箱</code></strong><span>，可随意填写，建议与GitHub的账号邮箱一致</span></p><p><span>若引号内你所输入的内容，没有空格，那么可省略引号</span></p><p><img src="https://s1.ax1x.com/2020/03/18/80rUmt.png" referrerpolicy="no-referrer" alt="开始配置"></p></blockquote><p>&nbsp;</p><h3><a name="--扩展命令" class="md-header-anchor"></a><span>- 扩展命令</span></h3><blockquote><ul><li><span>扩展命令，查看已有配置</span></li></ul><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 8px; left: 7.79688px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">* 查看git配置信息</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>git config --list</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">* 查看git用户名</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>git config user.name</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">* 查看邮箱配置</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>git config user.email</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 132px;"></div><div class="CodeMirror-gutters" style="display: none; height: 132px;"></div></div></div></pre><p><img src="https://s1.ax1x.com/2020/03/18/80ra0P.png" referrerpolicy="no-referrer" alt="查看配置"></p></blockquote><p>&nbsp;</p><blockquote><p><span style='color:red'><span>说明：</span></span><strong><span>对于本地Git的设置只需要配置好全局的全局的</span><code>用户名</code><span>和</span><code>邮箱</code><span>即可</span></strong></p></blockquote><p>&nbsp;</p><h1><a name="五-配置github-ssh-key关联线上仓库github的线上账号）" class="md-header-anchor"></a><span>五. 配置GitHub SSH key（关联线上仓库GitHub的线上账号）</span></h1><h2><a name="-准备和说明" class="md-header-anchor"></a><span>* 准备和说明</span></h2><ol start='' ><li><p><span>首先你需要一个GitHub的账号（线上账号）</span></p><blockquote><p><span>至于如何注册，我就不赘述了，直接“Sign up”注册一个就行了， 只需要输入用户名、邮箱、密码即可，很简单的，注册时后方的会有一些初始设置，看着选，看着填吧，对于你后续的使用没有什么影响</span></p></blockquote></li><li><p><span>为当前设备</span><code>添加SSHkey</code></p><blockquote><ul><li><span>SSH是一种</span><strong><span>网络协议</span></strong><span>，用于计算机之间的</span><strong><span>加密登录</span></strong><span>，使用这种方式登录是</span><strong><span>安全</span></strong><span>的</span></li><li><span>如果不进行配置，那么你每次推送代码到线上，每次都可能提示你输入账号密码进行登录；但一般情况下，只是首次需要你进行登录，且本次登录以后clone此账号下的其他仓库也将获得权限。</span></li><li><span>使用SSH的配置方式可以一劳永逸，一次配置成功以后，在本设备任意软件内使用Git的ssh链接方式操作都无需登录，将自动使用SSHkey作为认证方式登录，因为使用https的方式是由当前使用的软件保存你的登录凭证，</span><strong><span>是以软件为单位认证</span></strong><span>，而key是</span><strong><span>以设备为单位认证</span></strong><span>，将更加方便。</span></li><li><span>一个设备有且仅需设置一个key即可，除非你把本机已有的key删除了（包括GitHub上的删除和本地的删除），那么才可以再次生成key</span></li><li><span>当然你可以可以选择不配置此key，那么第五这个步骤可</span><strong><span>直接不看</span></strong><span>了，你可以在弹出登录框或提示登录的时候使用用户名密码的方式进行验证，但此方法可能会出现频繁登录的情况，并且凡使用git的软件都需要单独输入账号密码进行认证，这将会很繁琐</span></li></ul></blockquote></li></ol><p>&nbsp;</p><h2><a name="-配置ssh-key步骤" class="md-header-anchor"></a><span>* 配置SSH key步骤</span></h2><ol start='' ><li><p><span>登录你的GitHub账号 进入 </span><a href='https://github.com/login'><span>https://github.com/login</span></a></p></li><li><p><span>进入 </span><a href='https://github.com/settings/keys'><span>https://github.com/settings/keys</span></a></p></li><li><p><span>如果在页面中显示的有key（下图红框位置，这个图就代表没有key），请确认这些key是否正在使用，删除一些没必要存在的key（如果有，那么每一个key后方都有一个</span><code>delete</code><span>按钮，点击即可删除），若没有请看下一步</span></p><p><img src="https://s1.ax1x.com/2020/03/18/8Dw7o8.png" referrerpolicy="no-referrer" alt="查看是否已有key"></p></li><li><p><span>在右键菜单中打开 Git Bash</span></p></li><li><p><span>复制并运行 </span><code>rm -rf ~/.ssh/*</code><span>删除本机已有的所有sshkey，如果有的话他会删除，没有的话他不会做任何更改 </span></p><p><b style='color:red'><span>注意：此命令一定要复制粘贴，且完全一致，如果有任何不同，哪怕是多了个空格，可能都会导致系统崩溃，只能重装系统了</span></b></p></li><li><p><span>复制并运行</span><code>ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</code><span>，将</span><code>your_email@example.com</code><span>替换为</span><code>你的邮箱</code><span>，此邮箱可随意填写你的</span><b style = 'color:red'><span>真实邮箱</span></b><span>，建议填写为你GitHub账号的邮箱</span></p></li><li><p><span>在接下来让你输入内容的时候，直接回车，不要输入任何内容，</span><b style ='color:red'><span>按三次回车</span></b><span>，随后你会看到类似下图的界面</span></p><p><img src="https://s1.ax1x.com/2020/03/18/8DcMDJ.png" referrerpolicy="no-referrer" alt="创建key"></p><blockquote><p><span>当你使用命令 </span><code>ll ~/.ssh</code><span>时会发现生成了如图红框内的两个文件</span></p><p><img src="https://s1.ax1x.com/2020/03/18/8DcmgU.png" referrerpolicy="no-referrer" alt="生成key文件"></p></blockquote></li><li><p><span>再次进入 </span><a href='https://github.com/settings/keys'><span>https://github.com/settings/keys</span></a><span>，并点击右上角的</span><code>New SSH key</code><span>新建一个sshkey（</span><code>SSH keys</code><span>的右边那个按钮）</span></p><p><img src="https://s1.ax1x.com/2020/03/18/8Dgyw9.png" referrerpolicy="no-referrer" alt="点击新建"></p></li><li><p><span>继续执行命令</span><code>cat ~/.ssh/id_rsa.pub</code><span>查看生成的秘钥，你会看到如图所示的一串字符，完整复制这一串字符，下一步会用到</span></p><p><img src="https://s1.ax1x.com/2020/03/18/8DgeII.png" referrerpolicy="no-referrer" alt="查看并复制秘钥"></p></li><li><p><span>按图中所示填入相应内容点击添加即可</span></p><p><img src="https://s1.ax1x.com/2020/03/18/8DRAUA.png" referrerpolicy="no-referrer" alt="添加一个新的key"></p><blockquote><p><span>如果提示输入密码进行验证，那么输入密码进行确认</span></p><p><img src="https://s1.ax1x.com/2020/03/19/8DRr5R.png" referrerpolicy="no-referrer" alt="确认密码"></p></blockquote></li><li><p><span>回到Git Bash，执行</span><code>ssh -T git@github.com</code><span>，测试你的SSH 连接</span></p><blockquote><p><span>你可能会看到类似下方的提示</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 8px; left: 7.79688px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">The authenticity of host 'github.com (IP ADDRESS)' can't be established.</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Are you sure you want to continue connecting (yes/no)?</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 66px;"></div><div class="CodeMirror-gutters" style="display: none; height: 66px;"></div></div></div></pre><p><span>或者是下方这样的</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 8px; left: 7.79688px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">The authenticity of host 'github.com (IP ADDRESS)' can't be established.</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Are you sure you want to continue connecting (yes/no)?</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 88px;"></div><div class="CodeMirror-gutters" style="display: none; height: 88px;"></div></div></div></pre><p><span>那么直接键入</span><code>yes</code><span>即可，如果没有出现提示那么就跳过此步，可能</span><strong><span>直接成功</span></strong><span>了，也可能是</span><strong><span>直接失败</span></strong><span>了，下一步说明什么表示</span><strong><span>成功</span></strong><span>，什么表示</span><strong><span>失败</span></strong></p></blockquote></li><li><p><span>如果看到</span><code>Error: Permission denied (publickey)</code><span>就说明失败了，首先你可以多次尝试测试连接（上一步，第11步，因为有时可能是网络原因造成的失败），如果仍然不行，那么请回到</span><strong><span>第一步</span></strong><span>重新开始，如果你看到类似</span><code>Hi username! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code><span>的提示（类似下图）</span></p><p><img src="https://s1.ax1x.com/2020/03/19/8D4CRI.png" referrerpolicy="no-referrer" alt="添加成功"></p><p>&nbsp;</p><p><strong><span>那么就说明你成功了，恭喜你！</span></strong></p><p><strong><span>好了，添加了一SSH key，接下来就会用到它。</span></strong></p><p>&nbsp;</p></li></ol><h2><a name="-总结和说明" class="md-header-anchor"></a><span>* 总结和说明</span></h2><blockquote><ul><li><p><span>一台电脑只需要一个 SSH key</span></p></li><li><p><span>一个 SSH key 可以访问你的所有仓库，即使你有 1000000 个仓库，都没问题</span></p></li><li><p><span>如果你新买了电脑，就在新电脑上重新生成一个 SSH key，把这个 key 也上传到 GitHub，它可以和之前的 key 共存在 GitHub 上</span></p></li><li><p><span>如果你把 key 从电脑上删除了，重新生成一个 key 即可，替换之前的 key</span></p></li><li><p><span>其实此步骤是GitHub官方文档中给出的步骤，只不过我使用更为明了的方式翻译了一下而已，若需查看源步骤可参考以下链接</span></p><p><a href='https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent'><span>生成 - Generating a new SSH key and adding it to the ssh-agent</span></a></p><p><a href='https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account'><span>添加到GitHub - Adding a new SSH key to your GitHub account</span></a></p><p><a href='https://help.github.com/en/github/authenticating-to-github/testing-your-ssh-connection'><span>测试你的SSH连接 - Testing your SSH connection</span></a></p></li></ul></blockquote><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><blockquote><p><span>这个系列的第一篇文章大概就这样结束了，主要介绍了一下GitHub，一些说明以及Git的安装和一些配置</span></p><p><span>现在你已经获取了一个属于自己本设备的SSH key，接下来此系列的第二篇文件将介绍SSH key如何使用，GitHub的基本使用方法等内容，敬请期待...</span></p></blockquote></div>
+</body>
+</html>
