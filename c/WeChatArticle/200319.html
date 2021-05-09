@@ -226,6 +226,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
 }
 
 
+;
 /* CodeMirror Dracula theme */
 :root {
   --bg-color: #fbfbfb;
@@ -247,7 +248,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
   --item-hover-text-color: inherit;
   --search-select-text-color: #333;
   --search-select-bg-color: #db4d5270;
-  --rawblock-edit-panel-bd: #d0d0d0;
+  --rawblock-edit-panel-bd: #ddd;
   --monospace: 'Fira Mono', 'Cousine', 'Consolas', monospace;
   --node-fill: #fbfbfb;
   --node-border: #0000001a;
@@ -278,8 +279,8 @@ del {
 }
 
 mark {
-  padding: 2px 1px;
-  background: #d3ffa4;
+  padding: 2px;
+  background: #c7f661d3;
   color: inherit;
 }
 
@@ -287,6 +288,7 @@ blockquote {
   position: relative;
   margin: 1rem 0 1rem 2rem;
   font-family: 'Adelle', 'Times New Roman', serif;
+  color: #827676;
 }
 
 blockquote::before {
@@ -309,8 +311,17 @@ code {
   font-size: .9em;
   border: 1px solid #0000001a;
   border-radius: .25rem;
-  padding: 0 .125rem;
-  background: #00000008;
+  padding: 1px .25rem;
+  background: #fafafa;
+}
+
+kbd {
+  font-family: 'Fira Mono', 'Cousine', 'Consolas', monospace;
+  font-size: .875rem;
+  border: 2px solid #0000001a;
+  background: #f7f7f7;
+  color: #333;
+  box-shadow: none;
 }
 
 hr {
@@ -323,11 +334,11 @@ table {
 }
 
 table tr:nth-child(2n) {
-  background: #d0d0d0;
+  background: #ddd;
 }
 
 thead {
-  background: #d0d0d0;
+  background: #ddd;
 }
 
 td, th {
@@ -347,12 +358,9 @@ td, th {
   width: auto;
 }
 
-#write h3::before, #write h4::before, #write h5::before, #write h6::before {
-  display: none;
-}
-
-#write h1::after, #write h2::after, #write h3::after, #write h4::after, #write h5::after, #write h6::after {
+#write h1::before, #write h2::before, #write h3::before, #write h4::before, #write h5::before, #write h6::before {
   position: absolute;
+  left: auto;
   right: calc(100% + .75em);
   top: 0;
   color: #b4b4b4;
@@ -366,7 +374,7 @@ td, th {
   margin: 1rem 0;
 }
 
-#write h1::after {
+#write h1::before {
   content: 'H1';
   top: .87rem;
 }
@@ -376,7 +384,7 @@ td, th {
   margin: .7rem 0;
 }
 
-#write h2::after {
+#write h2::before {
   content: 'H2';
   top: .43rem;
 }
@@ -386,7 +394,7 @@ td, th {
   margin: .5rem 0;
 }
 
-#write h3::after {
+#write h3::before {
   content: 'H3';
   top: .2rem;
 }
@@ -396,7 +404,7 @@ td, th {
   margin: .2rem 0;
 }
 
-#write h4::after {
+#write h4::before {
   content: 'H4';
   top: .07rem;
 }
@@ -406,12 +414,24 @@ td, th {
   margin: 0;
 }
 
-#write h5::after {
+#write h5::before {
   content: 'H5';
 }
 
-#write h6::after {
+#write h6::before {
   content: 'H6';
+}
+
+#write > h1.md-focus::before,
+#write > h2.md-focus::before,
+#write > h3.md-focus::before,
+#write > h4.md-focus::before,
+#write > h5.md-focus::before,
+#write > h6.md-focus::before {
+  color: #757575;
+  padding: 0;
+  border: 0;
+  line-height: inherit;
 }
 
 #write ol, #write ul {
@@ -421,10 +441,12 @@ td, th {
 
 #write ol > li, #write ul > li {
   color: #db4d52;
+  font-weight: bold;
 }
 
 #write ol > li > *, #write ul > li > * {
   color: #333;
+  font-weight: normal;
 }
 
 #write ol > li > *:not(ol):not(ul), #write ul > li > *:not(ol):not(ul) {
@@ -454,7 +476,7 @@ td, th {
 }
 
 #write .md-task-list-item > input:hover {
-  background: #d0d0d0;
+  background: #ddd;
 }
 
 #write .md-task-list-item > input[checked]::before {
@@ -579,7 +601,7 @@ td, th {
 #write .md-footnote {
   font-family: 'Adelle', 'Times New Roman', serif;
   font-size: .8em;
-  border: 1px solid #d0d0d0;
+  border: 1px solid #ddd;
   padding: 0 4px;
   background: #f0f0f0;
   color: #333;
@@ -636,7 +658,7 @@ td, th {
 }
 
 #write pre[lang="mermaid"][mermaid-type="gantt"] .section2 {
-  fill: #d0d0d0;
+  fill: #ddd;
 }
 
 #write pre[lang="mermaid"][mermaid-type="gantt"] .section3 {
@@ -644,7 +666,7 @@ td, th {
 }
 
 #write pre[lang="mermaid"][mermaid-type="gantt"] .section4 {
-  fill: #d0d0d0;
+  fill: #ddd;
 }
 
 #write pre[lang="mermaid"][mermaid-type="gantt"] .section5 {
@@ -652,7 +674,7 @@ td, th {
 }
 
 #write pre[lang="mermaid"][mermaid-type="gantt"] .section6 {
-  fill: #d0d0d0;
+  fill: #ddd;
 }
 
 #write pre[lang="mermaid"][mermaid-type="gantt"] .section7 {
@@ -660,7 +682,7 @@ td, th {
 }
 
 #write pre[lang="mermaid"][mermaid-type="gantt"] .section8 {
-  fill: #d0d0d0;
+  fill: #ddd;
 }
 
 #write pre[lang="mermaid"][mermaid-type="gantt"] .section9 {
@@ -668,7 +690,7 @@ td, th {
 }
 
 #write pre[lang="mermaid"][mermaid-type="gantt"] .section10 {
-  fill: #d0d0d0;
+  fill: #ddd;
 }
 
 #write pre[lang="mermaid"][mermaid-type="gantt"] .section11 {
@@ -676,7 +698,7 @@ td, th {
 }
 
 #write pre[lang="mermaid"][mermaid-type="gantt"] .section12 {
-  fill: #d0d0d0;
+  fill: #ddd;
 }
 
 #write pre[lang="mermaid"][mermaid-type="gantt"] .section13 {
@@ -684,7 +706,7 @@ td, th {
 }
 
 #write pre[lang="mermaid"][mermaid-type="gantt"] .section14 {
-  fill: #d0d0d0;
+  fill: #ddd;
 }
 
 #write pre[lang="mermaid"][mermaid-type="gantt"] .section15 {
@@ -692,7 +714,7 @@ td, th {
 }
 
 #write pre[lang="mermaid"][mermaid-type="gantt"] .section16 {
-  fill: #d0d0d0;
+  fill: #ddd;
 }
 
 #write pre[lang="mermaid"][mermaid-type="gantt"] .section17 {
@@ -700,7 +722,7 @@ td, th {
 }
 
 #write pre[lang="mermaid"][mermaid-type="gantt"] .section18 {
-  fill: #d0d0d0;
+  fill: #ddd;
 }
 
 #write pre[lang="mermaid"][mermaid-type="gantt"] .section19 {
@@ -776,6 +798,10 @@ td, th {
   border-color: #db4d52;
 }
 
+#typora-quick-open .ty-quick-open-category-list-inner {
+  position: relative;
+}
+
 #typora-quick-open .ty-quick-open-category-title {
   height: auto;
   padding-top: 4px;
@@ -786,11 +812,20 @@ td, th {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-bottom: 2px;
   cursor: pointer;
 }
 
 #typora-quick-open .typora-quick-open-item:not(.active):hover {
   background: #23242b;
+}
+
+#typora-quick-open .typora-quick-open-item.active:before {
+  content: '⟩';
+  position: absolute;
+  left: 8px;
+  font-weight: bold;
+  padding-bottom: 5px;
 }
 
 #typora-quick-open .typora-quick-open-item-path {
@@ -834,7 +869,7 @@ td, th {
 }
 
 .on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) mark {
-  background: #d0d0d0;
+  background: #ddd;
 }
 
 .on-focus-mode blockquote .md-end-block:not(.md-focus):not(.md-focus-container)::before {
@@ -1029,7 +1064,7 @@ td, th {
 }
 
 .btn-default:hover {
-  background: #d0d0d0;
+  background: #ddd;
 }
 
 footer.ty-footer {
@@ -1074,7 +1109,7 @@ footer.ty-footer {
 
 #megamenu-content .long-btn:hover {
   border-color: #db4d52;
-  background: #d8d8d8;
+  background: #eee;
   color: inherit !important;
 }
 
@@ -1090,7 +1125,7 @@ footer.ty-footer {
 
 #recent-file-panel-action-btn:hover {
   border-color: #db4d52;
-  background: #d8d8d8;
+  background: #eee;
   color: inherit;
 }
 
@@ -1103,7 +1138,7 @@ footer.ty-footer {
 }
 
 #recent-file-panel tbody tr:hover {
-  background-color: #d8d8d8 !important;
+  background-color: #eee !important;
 }
 
 #recent-file-panel tbody tr:hover td:nth-child(1) {
@@ -1168,13 +1203,13 @@ footer.ty-footer {
   cursor: pointer;
 }
 
-.ty-preferences .nav-group-item:hover {
-  background: #d8d8d8;
+.ty-preferences .nav-group-item:not(.active):hover {
+  background: #eee;
   color: inherit;
 }
 
 .ty-preferences .nav-group-item:active, .ty-preferences .nav-group-item.active {
-  background: #d0d0d0;
+  background: #ddd;
   color: inherit;
 }
 
@@ -1187,12 +1222,12 @@ footer.ty-footer {
 
 .ty-preferences .btn-default:hover {
   border-color: #db4d52;
-  background: #d8d8d8;
+  background: #eee !important;
   color: inherit;
 }
 
 .ty-preferences .btn-default:active, .ty-preferences .btn-default.active {
-  background: #d0d0d0;
+  background: #ddd;
 }
 
 .ty-preferences select,
@@ -1206,7 +1241,7 @@ footer.ty-footer {
 }
 
 .ty-preferences ul.dropdown-menu li:hover {
-  background: #d8d8d8;
+  background: #eee;
 }
 
 .cm-s-typora-default .cm-s-inner.CodeMirror-line {
@@ -1217,7 +1252,7 @@ footer.ty-footer {
   position: static;
 }
 
-#write > p:first-child:not(:only-child)::before, #write > p:only-child::before {
+#write > p:only-child:empty::before {
   content: '';
   display: block;
   position: absolute;
@@ -1230,11 +1265,6 @@ footer.ty-footer {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  opacity: 0;
-}
-
-#write > p:only-child:empty::before {
-  opacity: 1;
 }
 
 @media print {
@@ -1246,13 +1276,13 @@ footer.ty-footer {
 
 /* CodeMirror 3024 Day theme */
 .cm-s-inner {
-  padding: .5rem .2rem;
-  border: 1px solid #d0d0d0 !important;
+  padding: .25rem;
+  border: 1px solid #0000001a !important;
   border-radius: .25rem;
 }
 
 .cm-s-inner.CodeMirror, .cm-s-inner .CodeMirror-gutters {
-  background-color: #f7f7f7 !important;
+  background-color: #fafafa !important;
   color: #3a3432 !important;
   border: none;
 }
@@ -1372,14 +1402,14 @@ footer.ty-footer {
 }
 
 #fences-auto-suggest .active {
-  background: #d0d0d0;
+  background: #ddd;
 }
 
 #write .code-tooltip {
   bottom: initial;
   top: calc(100% - 1px);
   background: #f7f7f7;
-  border: 1px solid #d0d0d0;
+  border: 1px solid #ddd;
   border-top: 0;
 }
 
@@ -1417,6 +1447,10 @@ sup.md-footnote {
   color: #f0f0f0;
 }
 
+#typora-quick-open input {
+  color: #333;
+}
+
 #megamenu-menu-sidebar {
   color: #f0f0f0 !important;
 }
@@ -1436,6 +1470,6 @@ sup.md-footnote {
 </style>
 </head>
 <body class='typora-export os-windows' >
-<div  id='write'  class = 'is-node'><p><strong><span>目录 · 大纲</span></strong></p><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n4"><a class="md-toc-inner" href="#前言">前言</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n29"><a class="md-toc-inner" href="#一-为什么要学习github">一. 为什么要学习GitHub</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n74"><a class="md-toc-inner" href="#二-git和github">二. Git和GitHub</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n75"><a class="md-toc-inner" href="#-什么是git">* 什么是Git</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n80"><a class="md-toc-inner" href="#-什么是github">* 什么是GitHub</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n86"><a class="md-toc-inner" href="#三-安装git">三. 安装Git</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n90"><a class="md-toc-inner" href="#1-下载git">1. 下载Git</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n97"><a class="md-toc-inner" href="#2-安装git">2. 安装Git</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n108"><a class="md-toc-inner" href="#3-确认安装是否成功">3. 确认安装是否成功</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n117"><a class="md-toc-inner" href="#四-配置git-本地设置）">四. 配置Git （本地设置）</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n118"><a class="md-toc-inner" href="#-配置全局用户名和邮箱">* 配置全局用户名和邮箱</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n119"><a class="md-toc-inner" href="#--若不进行配置会发生什么的说明">- 若不进行配置会发生什么的说明</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n126"><a class="md-toc-inner" href="#--配置步骤">- 配置步骤</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n137"><a class="md-toc-inner" href="#--扩展命令">- 扩展命令</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n149"><a class="md-toc-inner" href="#五-配置github-ssh-key关联线上仓库github的线上账号）">五. 配置GitHub SSH key（关联线上仓库GitHub的线上账号）</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n150"><a class="md-toc-inner" href="#-准备和说明">* 准备和说明</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n171"><a class="md-toc-inner" href="#-配置ssh-key步骤">* 配置SSH key步骤</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n220"><a class="md-toc-inner" href="#-总结和说明">* 总结和说明</a></span></p></div><br><br><br><h1><a name="前言" class="md-header-anchor"></a><span>前言</span></h1><p><span> </span>&emsp;<span> </span>&nbsp;&nbsp;<span>《遇见GitHub》系列从今天开始更新（</span><mark><strong><span>后续更新时间：看心情</span></strong></mark><span>）</span></p><p><span> </span>&emsp;&emsp;<span>这个系列一共会有三篇文章，在发布后，可能会不定期修改以完善其内容，下面是关于这个系列的三篇文章内容的安排：</span></p><ol start='' ><li><p><span>遇见GitHub（01）偶遇·初识-邂逅</span></p><blockquote><p>&emsp;<span>主要介绍一些基础知识。</span></p><p>&emsp;<span>为什么要学习GitHub？什么是Git？什么是GitHub？他们有什么关系？GitHub有什么有趣的东西？有什么魅力？</span></p><p>&emsp;<span>Git的安装与设置（设置主要是使其关联登录到GitHub）</span></p><p><span>...</span></p></blockquote></li><li><p><span>遇见GitHub（02）相识·相知-感觉</span></p><blockquote><p>&emsp;<span>Git的基本使用方法。</span></p><p>&emsp;<span>如何新建一个仓库？如何将本地的仓库推（提交）到GitHub？如何修改GitHub上已有的仓库？如何提交更新？如何（拉）下载GitHub上的仓库？</span></p><p><span>...</span></p></blockquote></li><li><p><span>遇见GitHub（03）了解·深入-热爱</span></p><blockquote><p>&emsp;<span>Git和GitHub的高级进阶知识，深入学习。</span></p><p>&emsp;<span>Git的后悔药（回退版本，即提交了一些错误的内容，想要回到提交之前的状态。有两种方法）。</span></p><p>&emsp;<span>什么是Git分支？如何使用分支？</span></p><p><span>...</span></p></blockquote></li></ol><p>&nbsp;</p><h1><a name="一-为什么要学习github" class="md-header-anchor"></a><span>一. 为什么要学习GitHub</span></h1><ul><li><p><span>正确认识GitHub</span></p><blockquote><p><span>		</span><span>首先需要认清一个概念，GitHub并不是程序员的专属，其中有许多资源对于很多人都适用，包括某些高校官方的学习资料、许多知名企业的开源项目（如Ali、Microsoft等）、开源的软件（这个涵盖就很多了你懂的，不便多说），甚至你还能找到 中华新华字典之类的项目。</span></p><p><span>		</span><span>在此致敬一直为开源事业奉献的人们！</span></p><p><span>		</span><span>总之你会发现许多有趣的项目，各行各业的都有。</span></p><p><span>		</span><span>你也可以将你自己的GitHub用作私人的存储库，私人云盘，私人博客。</span></p></blockquote></li><li><p><span>分享几个有趣的项目</span></p><blockquote><p><a href='https://github.com/QSCTech/zju-icicles'><span>浙江大学课程攻略共享计划</span></a></p><p><a href='https://github.com/USTC-Resource/USTC-Course'><span>中国科学技术大学计算机学院课程资源</span></a></p><p><a href='https://github.com/lib-pku/libpku'><span>贵校课程资料民间整理</span></a></p><p><a href='https://github.com/martinwu42/project-hover'><span>气垫船计划——免费、去中心化的北京大学往年题资料库</span></a></p><p><a href='https://github.com/EECS-PKU-XSB/Shared-learning-materials'><span>北京大学信科学生会学术部资料库</span></a></p><p><a href='https://github.com/tongtzeho/PKUCourse'><span>北大计算机课程大作业</span></a></p><p><a href='https://github.com/PKUanonym/REKCARC-TSC-UHT'><span>清华大学计算机系课程攻略</span></a></p><p><a href='https://github.com/zjdx1998/seucourseshare'><span>东南大学课程共享计划</span></a></p><p><a href='https://github.com/CoolPhilChen/SJTU-Courses/'><span>上海交通大学课程资料分享</span></a></p><p><a href='https://github.com/sysuexam/SYSU-Exam'><span>中山大学课程资料分享</span></a></p><p><a href='https://github.com/idealclover/NJU-Review-Materials'><span>南京大学课程复习资料</span></a></p><p><a href='https://github.com/CooperNiu/ZZU-Courses-Resource'><span>郑州大学课程复习资料</span></a></p><p><a href='https://github.com/brenner8023/gdut-course'><span>广东工业大学计算机学院课程攻略</span></a></p><p>&nbsp;</p><p><a href='https://github.com/chinese-poetry/chinese-poetry'><span>最全中华古诗词数据库</span></a></p><p><a href='https://github.com/pwxcoo/chinese-xinhua'><span>中华新华字典数据库</span></a></p><p><a href='https://github.com/iptv-org/iptv'><span>全球电视直播频道 iptv</span></a></p><p>&nbsp;</p><p><span>... 更多的有趣项目，敬请探索</span></p></blockquote></li><li><p><span>大家也可以关注我的GitHub中的stars（加星收藏的）项目  有许多有趣的项目</span></p><blockquote><p><a href='https://github.com/CandyMuj?tab=stars'><span>我的GitHub stars - CandyMuj</span></a></p></blockquote></li><li><p><span>为什么要学习GitHub</span></p><blockquote><p><span>		</span><span>经过以上所说的可得出为何需要学习GitHub，GitHub是一个可以发现无限可能地方，你可以使用GitHub学习，可以在上面寻找有意思的开源软件，亦可用作私人仓库（云盘），私人博客，部署静态网页等。。。</span></p><p><span>		</span><span>无限可能，期待你的探索...</span></p></blockquote></li></ul><p>&nbsp;</p><p><b style = 'color:red'><span>！！！</span><span>*</span><span>*</span><span>*</span><span> 注意 </span><span>*</span><span>*</span><span>*</span><span> ！！！</span></b></p><blockquote><p><span style = 'color:red'><span>GitHub属于国外的网站，且不需要科学手段即可正常访问，但是由于自己的网络原因或其他不可知原因，可能访问较慢！如果使用科学手段即可快速访问，虽然不使用科学手段也可以访问，但是如果使用了科学手段可以使访问速度显著提升。</span></span ></p></blockquote><p>&nbsp;</p><h1><a name="二-git和github" class="md-header-anchor"></a><span>二. Git和GitHub</span></h1><h2><a name="-什么是git" class="md-header-anchor"></a><span>* 什么是Git</span></h2><blockquote><p><em><span>Git</span></em><span> 是目前世界上最先进的开源的分布式版本控制系统（没有之一）。</span></p><p><span>版本控制是指对软件开发过程中各种程序代码、配置文件及说明文档等文件变更的管理，是软件配置管理的核心思想之一。</span></p></blockquote><p>&nbsp;</p><h2><a name="-什么是github" class="md-header-anchor"></a><span>* 什么是GitHub</span></h2><blockquote><p><em><span>GitHub</span></em><span>是一个面向开源及私有软件项目的托管平台，因为只支持git 作为唯一的版本库格式进行托管，故名</span><em><span>GitHub</span></em><span>。</span></p><p><span>简单来说GitHub是基于Git的一个线上仓库，当然他除了Git代码仓库托管及基本的 Web管理界面以外，还提供了订阅、讨论组、文本渲染、在线文件编辑器、协作图谱（报表）、代码片段分享（Gist）等功能。</span></p><p><span>上方所说的同样是Git和GitHub之间的关系</span></p></blockquote><p>&nbsp;</p><h1><a name="三-安装git" class="md-header-anchor"></a><span>三. 安装Git</span></h1><blockquote><p><span>上方说到，GitHub实质是基于Git的一个线上仓库，所以我们需要先使用Git的本地仓库，然后再将我们的本地仓库的内容或变更推送到线上。这也是使用GitHub的最基本的流程。</span></p></blockquote><p>&nbsp;</p><h2><a name="1-下载git" class="md-header-anchor"></a><span>1. 下载Git</span></h2><ul><li><p><span>下载地址：</span><a href='https://git-scm.com/downloads'><span>https://git-scm.com/downloads</span></a></p><p><span>		</span><span>在页面中选择适合自己的版本进行下载，由于我使用的是Windows，且Windows也是大部分人使用的系统，所以我就使用WIndows版本进行讲解。</span></p><p><img src="https://s1.ax1x.com/2020/03/17/8a91Ff.png" referrerpolicy="no-referrer" alt="下载Git"></p></li></ul><p>&nbsp;</p><h2><a name="2-安装git" class="md-header-anchor"></a><span>2. 安装Git</span></h2><ul><li><p><span>下载后直接双击即可安装</span></p><p><img src="https://s1.ax1x.com/2020/03/17/8am2o4.png" referrerpolicy="no-referrer" alt="下载的文件"></p></li><li><p><span>安装过程直接下一步即可</span></p><p><b style = 'color:red'><span>注意：</span></b><span style = 'color:red'><span>除了可修改安装路径，其余的所有选项 </span><strong><span>默认</span></strong><span>即可，请勿修改！！！</span></span></p><p><span>建议只更改第二步（点击了第一个</span><em><span>“Next”</span></em><span>后的那一步），可修改默认的安装位置，也可以不修改，git作为版本控制软件可以即使安装在C盘也是不错的选择</span></p><p><img src="https://s1.ax1x.com/2020/03/17/8am0Wn.png" alt="修改默认安装路径" style="zoom: 80%;" /></p></li></ul><p>&nbsp;</p><h2><a name="3-确认安装是否成功" class="md-header-anchor"></a><span>3. 确认安装是否成功</span></h2><ul><li><p><strong><span>在桌面或资源管理器任意位置右键</span></strong><span>，你会发现右键菜单多了两个如下图的选项，那么你就安装成功了</span></p><p><img src="https://s1.ax1x.com/2020/03/17/8auKgI.png" referrerpolicy="no-referrer" alt="右键菜单"></p></li><li><p><span>您也可以在Windows的命令管理器（cmd）或者直接选择上方右键菜单的&quot;Git Bash Here&quot;打开Git的命令窗口，键入命令 </span><code>git --version</code><span> 如果出现了Git的版本信息（如下图所示）那么是必定安装成功了的</span></p><p><img src="https://s1.ax1x.com/2020/03/17/8aKVs0.png" referrerpolicy="no-referrer" alt="查看Git的版本"></p></li></ul><p>&nbsp;</p><h1><a name="四-配置git-本地设置）" class="md-header-anchor"></a><span>四. 配置Git （本地设置）</span></h1><h2><a name="-配置全局用户名和邮箱" class="md-header-anchor"></a><span>* 配置全局用户名和邮箱</span></h2><h3><a name="--若不进行配置会发生什么的说明" class="md-header-anchor"></a><span>- 若不进行配置会发生什么的说明</span></h3><blockquote><ul><li><span>若不进行配置，那么你在进行本地仓库的提交时都将会报错，并提示你如何设置，如图所示</span></li></ul><p><img src="https://s1.ax1x.com/2020/03/18/80l7VI.png" referrerpolicy="no-referrer" alt="不配置用户名"></p></blockquote><p>&nbsp;</p><h3><a name="--配置步骤" class="md-header-anchor"></a><span>- 配置步骤</span></h3><blockquote><ul><li><span>在右键菜单中选择&quot;Git Bash Here&quot;打开命令窗口依次执行如下几句</span></li></ul><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 8px; left: 7.79688px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">git config --global user.name "Your Name"</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">git config --global user.email "you@example.com"</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 44px;"></div><div class="CodeMirror-gutters" style="display: none; height: 44px;"></div></div></div></pre><p><span>将</span><strong><code>Your Name</code></strong><span>替换为</span><strong><code>你的英文名</code></strong><span>，可随意填写，建议与GitHub的账号用户名一致</span></p><p><span>将</span><strong><code>you@example.com</code></strong><span>替换为</span><strong><code>你的邮箱</code></strong><span>，可随意填写，建议与GitHub的账号邮箱一致</span></p><p><span>若引号内你所输入的内容，没有空格，那么可省略引号</span></p><p><img src="https://s1.ax1x.com/2020/03/18/80rUmt.png" referrerpolicy="no-referrer" alt="开始配置"></p></blockquote><p>&nbsp;</p><h3><a name="--扩展命令" class="md-header-anchor"></a><span>- 扩展命令</span></h3><blockquote><ul><li><span>扩展命令，查看已有配置</span></li></ul><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 8px; left: 7.79688px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">* 查看git配置信息</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>git config --list</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">* 查看git用户名</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>git config user.name</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">* 查看邮箱配置</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>git config user.email</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 132px;"></div><div class="CodeMirror-gutters" style="display: none; height: 132px;"></div></div></div></pre><p><img src="https://s1.ax1x.com/2020/03/18/80ra0P.png" referrerpolicy="no-referrer" alt="查看配置"></p></blockquote><p>&nbsp;</p><blockquote><p><span style='color:red'><span>说明：</span></span><strong><span>对于本地Git的设置只需要配置好全局的全局的</span><code>用户名</code><span>和</span><code>邮箱</code><span>即可</span></strong></p></blockquote><p>&nbsp;</p><h1><a name="五-配置github-ssh-key关联线上仓库github的线上账号）" class="md-header-anchor"></a><span>五. 配置GitHub SSH key（关联线上仓库GitHub的线上账号）</span></h1><h2><a name="-准备和说明" class="md-header-anchor"></a><span>* 准备和说明</span></h2><ol start='' ><li><p><span>首先你需要一个GitHub的账号（线上账号）</span></p><blockquote><p><span>至于如何注册，我就不赘述了，直接“Sign up”注册一个就行了， 只需要输入用户名、邮箱、密码即可，很简单的，注册时后方的会有一些初始设置，看着选，看着填吧，对于你后续的使用没有什么影响</span></p></blockquote></li><li><p><span>为当前设备</span><code>添加SSHkey</code></p><blockquote><ul><li><span>SSH是一种</span><strong><span>网络协议</span></strong><span>，用于计算机之间的</span><strong><span>加密登录</span></strong><span>，使用这种方式登录是</span><strong><span>安全</span></strong><span>的</span></li><li><span>如果不进行配置，那么你每次推送代码到线上，每次都可能提示你输入账号密码进行登录；但一般情况下，只是首次需要你进行登录，且本次登录以后clone此账号下的其他仓库也将获得权限。</span></li><li><span>使用SSH的配置方式可以一劳永逸，一次配置成功以后，在本设备任意软件内使用Git的ssh链接方式操作都无需登录，将自动使用SSHkey作为认证方式登录，因为使用https的方式是由当前使用的软件保存你的登录凭证，</span><strong><span>是以软件为单位认证</span></strong><span>，而key是</span><strong><span>以设备为单位认证</span></strong><span>，将更加方便。</span></li><li><span>一个设备有且仅需设置一个key即可，除非你把本机已有的key删除了（包括GitHub上的删除和本地的删除），那么才可以再次生成key</span></li><li><span>当然你可以可以选择不配置此key，那么第五这个步骤可</span><strong><span>直接不看</span></strong><span>了，你可以在弹出登录框或提示登录的时候使用用户名密码的方式进行验证，但此方法可能会出现频繁登录的情况，并且凡使用git的软件都需要单独输入账号密码进行认证，这将会很繁琐</span></li></ul></blockquote></li></ol><p>&nbsp;</p><h2><a name="-配置ssh-key步骤" class="md-header-anchor"></a><span>* 配置SSH key步骤</span></h2><ol start='' ><li><p><span>登录你的GitHub账号 进入 </span><a href='https://github.com/login'><span>https://github.com/login</span></a></p></li><li><p><span>进入 </span><a href='https://github.com/settings/keys'><span>https://github.com/settings/keys</span></a></p></li><li><p><span>如果在页面中显示的有key（下图红框位置，这个图就代表没有key），请确认这些key是否正在使用，删除一些没必要存在的key（如果有，那么每一个key后方都有一个</span><code>delete</code><span>按钮，点击即可删除），若没有请看下一步</span></p><p><img src="https://s1.ax1x.com/2020/03/18/8Dw7o8.png" referrerpolicy="no-referrer" alt="查看是否已有key"></p></li><li><p><span>在右键菜单中打开 Git Bash</span></p></li><li><p><span>复制并运行 </span><code>rm -rf ~/.ssh/*</code><span>删除本机已有的所有sshkey，如果有的话他会删除，没有的话他不会做任何更改 </span></p><p><b style='color:red'><span>注意：此命令一定要复制粘贴，且完全一致，如果有任何不同，哪怕是多了个空格，可能都会导致系统崩溃，只能重装系统了</span></b></p></li><li><p><span>复制并运行</span><code>ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</code><span>，将</span><code>your_email@example.com</code><span>替换为</span><code>你的邮箱</code><span>，此邮箱可随意填写你的</span><b style = 'color:red'><span>真实邮箱</span></b><span>，建议填写为你GitHub账号的邮箱</span></p></li><li><p><span>在接下来让你输入内容的时候，直接回车，不要输入任何内容，</span><b style ='color:red'><span>按三次回车</span></b><span>，随后你会看到类似下图的界面</span></p><p><img src="https://s1.ax1x.com/2020/03/18/8DcMDJ.png" referrerpolicy="no-referrer" alt="创建key"></p><blockquote><p><span>当你使用命令 </span><code>ll ~/.ssh</code><span>时会发现生成了如图红框内的两个文件</span></p><p><img src="https://s1.ax1x.com/2020/03/18/8DcmgU.png" referrerpolicy="no-referrer" alt="生成key文件"></p></blockquote></li><li><p><span>再次进入 </span><a href='https://github.com/settings/keys'><span>https://github.com/settings/keys</span></a><span>，并点击右上角的</span><code>New SSH key</code><span>新建一个sshkey（</span><code>SSH keys</code><span>的右边那个按钮）</span></p><p><img src="https://s1.ax1x.com/2020/03/18/8Dgyw9.png" referrerpolicy="no-referrer" alt="点击新建"></p></li><li><p><span>继续执行命令</span><code>cat ~/.ssh/id_rsa.pub</code><span>查看生成的秘钥，你会看到如图所示的一串字符，完整复制这一串字符，下一步会用到</span></p><p><img src="https://s1.ax1x.com/2020/03/18/8DgeII.png" referrerpolicy="no-referrer" alt="查看并复制秘钥"></p></li><li><p><span>按图中所示填入相应内容点击添加即可</span></p><p><img src="https://s1.ax1x.com/2020/03/18/8DRAUA.png" referrerpolicy="no-referrer" alt="添加一个新的key"></p><blockquote><p><span>如果提示输入密码进行验证，那么输入密码进行确认</span></p><p><img src="https://s1.ax1x.com/2020/03/19/8DRr5R.png" referrerpolicy="no-referrer" alt="确认密码"></p></blockquote></li><li><p><span>回到Git Bash，执行</span><code>ssh -T git@github.com</code><span>，测试你的SSH 连接</span></p><blockquote><p><span>你可能会看到类似下方的提示</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 8px; left: 7.79688px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">The authenticity of host 'github.com (IP ADDRESS)' can't be established.</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Are you sure you want to continue connecting (yes/no)?</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 66px;"></div><div class="CodeMirror-gutters" style="display: none; height: 66px;"></div></div></div></pre><p><span>或者是下方这样的</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 8px; left: 7.79688px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">The authenticity of host 'github.com (IP ADDRESS)' can't be established.</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Are you sure you want to continue connecting (yes/no)?</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 88px;"></div><div class="CodeMirror-gutters" style="display: none; height: 88px;"></div></div></div></pre><p><span>那么直接键入</span><code>yes</code><span>即可，如果没有出现提示那么就跳过此步，可能</span><strong><span>直接成功</span></strong><span>了，也可能是</span><strong><span>直接失败</span></strong><span>了，下一步说明什么表示</span><strong><span>成功</span></strong><span>，什么表示</span><strong><span>失败</span></strong></p></blockquote></li><li><p><span>如果看到</span><code>Error: Permission denied (publickey)</code><span>就说明失败了，首先你可以多次尝试测试连接（上一步，第11步，因为有时可能是网络原因造成的失败），如果仍然不行，那么请回到</span><strong><span>第一步</span></strong><span>重新开始，如果你看到类似</span><code>Hi username! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code><span>的提示（类似下图）</span></p><p><img src="https://s1.ax1x.com/2020/03/19/8D4CRI.png" referrerpolicy="no-referrer" alt="添加成功"></p><p>&nbsp;</p><p><strong><span>那么就说明你成功了，恭喜你！</span></strong></p><p><strong><span>好了，添加了一SSH key，接下来就会用到它。</span></strong></p><p>&nbsp;</p></li></ol><h2><a name="-总结和说明" class="md-header-anchor"></a><span>* 总结和说明</span></h2><blockquote><ul><li><p><span>一台电脑只需要一个 SSH key</span></p></li><li><p><span>一个 SSH key 可以访问你的所有仓库，即使你有 1000000 个仓库，都没问题</span></p></li><li><p><span>如果你新买了电脑，就在新电脑上重新生成一个 SSH key，把这个 key 也上传到 GitHub，它可以和之前的 key 共存在 GitHub 上</span></p></li><li><p><span>如果你把 key 从电脑上删除了，重新生成一个 key 即可，替换之前的 key</span></p></li><li><p><span>其实此步骤是GitHub官方文档中给出的步骤，只不过我使用更为明了的方式翻译了一下而已，若需查看源步骤可参考以下链接</span></p><p><a href='https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent'><span>生成 - Generating a new SSH key and adding it to the ssh-agent</span></a></p><p><a href='https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account'><span>添加到GitHub - Adding a new SSH key to your GitHub account</span></a></p><p><a href='https://help.github.com/en/github/authenticating-to-github/testing-your-ssh-connection'><span>测试你的SSH连接 - Testing your SSH connection</span></a></p></li></ul></blockquote><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><blockquote><p><span>这个系列的第一篇文章大概就这样结束了，主要介绍了一下GitHub，一些说明以及Git的安装和一些配置</span></p><p><span>现在你已经获取了一个属于自己本设备的SSH key，接下来此系列的第二篇文件将介绍SSH key如何使用，GitHub的基本使用方法等内容，敬请期待...</span></p><p>&nbsp;</p><ul><li><span>最后欢迎大家关注我的GitHub账号 </span><a href='https://github.com/CandyMuj'><span>CandyMuj</span></a></li></ul><ul><li><span>你可以查看 </span><a href='https://github.com/CandyMuj?tab=repositories'><span>我的仓库</span></a><span>，也可以查看我 </span><a href='https://github.com/CandyMuj?tab=stars'><span>Star</span></a><span> 的一些有趣的项目</span></li></ul></blockquote></div>
+<div  id='write'  class = 'is-node'><p><strong><span>目录 · 大纲</span></strong></p><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n4"><a class="md-toc-inner" href="#前言">前言</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n29"><a class="md-toc-inner" href="#一-为什么要学习github">一. 为什么要学习GitHub</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n74"><a class="md-toc-inner" href="#二-git和github">二. Git和GitHub</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n75"><a class="md-toc-inner" href="#-什么是git">* 什么是Git</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n80"><a class="md-toc-inner" href="#-什么是github">* 什么是GitHub</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n86"><a class="md-toc-inner" href="#三-安装git">三. 安装Git</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n90"><a class="md-toc-inner" href="#1-下载git">1. 下载Git</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n97"><a class="md-toc-inner" href="#2-安装git">2. 安装Git</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n108"><a class="md-toc-inner" href="#3-确认安装是否成功">3. 确认安装是否成功</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n117"><a class="md-toc-inner" href="#四-配置git-本地设置）">四. 配置Git （本地设置）</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n118"><a class="md-toc-inner" href="#-配置全局用户名和邮箱">* 配置全局用户名和邮箱</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n119"><a class="md-toc-inner" href="#--若不进行配置会发生什么的说明">- 若不进行配置会发生什么的说明</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n126"><a class="md-toc-inner" href="#--配置步骤">- 配置步骤</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n137"><a class="md-toc-inner" href="#--扩展命令">- 扩展命令</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n149"><a class="md-toc-inner" href="#五-配置github-ssh-key关联线上仓库github的线上账号）">五. 配置GitHub SSH key（关联线上仓库GitHub的线上账号）</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n150"><a class="md-toc-inner" href="#-准备和说明">* 准备和说明</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n171"><a class="md-toc-inner" href="#-配置ssh-key步骤">* 配置SSH key步骤</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n220"><a class="md-toc-inner" href="#-总结和说明">* 总结和说明</a></span></p></div><br><br><br><h1><a name="前言" class="md-header-anchor"></a><span>前言</span></h1><p><span> </span>&emsp;<span> </span>&nbsp;&nbsp;<span>《遇见GitHub》系列从今天开始更新（</span><mark><strong><span>后续更新时间：看心情</span></strong></mark><span>）</span></p><p><span> </span>&emsp;&emsp;<span>这个系列一共会有三篇文章，在发布后，可能会不定期修改以完善其内容，下面是关于这个系列的三篇文章内容的安排：</span></p><ol start='' ><li><p><span>遇见GitHub（01）偶遇·初识-邂逅</span></p><blockquote><p>&emsp;<span>主要介绍一些基础知识。</span></p><p>&emsp;<span>为什么要学习GitHub？什么是Git？什么是GitHub？他们有什么关系？GitHub有什么有趣的东西？有什么魅力？</span></p><p>&emsp;<span>Git的安装与设置（设置主要是使其关联登录到GitHub）</span></p><p><span>...</span></p></blockquote></li><li><p><span>遇见GitHub（02）相识·相知-感觉</span></p><blockquote><p>&emsp;<span>Git的基本使用方法。</span></p><p>&emsp;<span>如何新建一个仓库？如何将本地的仓库推（提交）到GitHub？如何修改GitHub上已有的仓库？如何提交更新？如何（拉）下载GitHub上的仓库？</span></p><p><span>...</span></p></blockquote></li><li><p><span>遇见GitHub（03）了解·深入-热爱</span></p><blockquote><p>&emsp;<span>Git和GitHub的高级进阶知识，深入学习。</span></p><p>&emsp;<span>Git的后悔药（回退版本，即提交了一些错误的内容，想要回到提交之前的状态。有两种方法）。</span></p><p>&emsp;<span>什么是Git分支？如何使用分支？</span></p><p><span>...</span></p></blockquote></li></ol><p>&nbsp;</p><h1><a name="一-为什么要学习github" class="md-header-anchor"></a><span>一. 为什么要学习GitHub</span></h1><ul><li><p><span>正确认识GitHub</span></p><blockquote><p><span>		</span><span>首先需要认清一个概念，GitHub并不是程序员的专属，其中有许多资源对于很多人都适用，包括某些高校官方的学习资料、许多知名企业的开源项目（如Ali、Microsoft等）、开源的软件（这个涵盖就很多了你懂的，不便多说），甚至你还能找到 中华新华字典之类的项目。</span></p><p><span>		</span><span>在此致敬一直为开源事业奉献的人们！</span></p><p><span>		</span><span>总之你会发现许多有趣的项目，各行各业的都有。</span></p><p><span>		</span><span>你也可以将你自己的GitHub用作私人的存储库，私人云盘，私人博客，云笔记（比什么有道等一众笔记软件好用多了）。</span></p></blockquote></li><li><p><span>分享几个有趣的项目</span></p><blockquote><p><a href='https://github.com/QSCTech/zju-icicles'><span>浙江大学课程攻略共享计划</span></a></p><p><a href='https://github.com/USTC-Resource/USTC-Course'><span>中国科学技术大学计算机学院课程资源</span></a></p><p><a href='https://github.com/lib-pku/libpku'><span>贵校课程资料民间整理</span></a></p><p><a href='https://github.com/martinwu42/project-hover'><span>气垫船计划——免费、去中心化的北京大学往年题资料库</span></a></p><p><a href='https://github.com/EECS-PKU-XSB/Shared-learning-materials'><span>北京大学信科学生会学术部资料库</span></a></p><p><a href='https://github.com/tongtzeho/PKUCourse'><span>北大计算机课程大作业</span></a></p><p><a href='https://github.com/PKUanonym/REKCARC-TSC-UHT'><span>清华大学计算机系课程攻略</span></a></p><p><a href='https://github.com/zjdx1998/seucourseshare'><span>东南大学课程共享计划</span></a></p><p><a href='https://github.com/CoolPhilChen/SJTU-Courses/'><span>上海交通大学课程资料分享</span></a></p><p><a href='https://github.com/sysuexam/SYSU-Exam'><span>中山大学课程资料分享</span></a></p><p><a href='https://github.com/idealclover/NJU-Review-Materials'><span>南京大学课程复习资料</span></a></p><p><a href='https://github.com/CooperNiu/ZZU-Courses-Resource'><span>郑州大学课程复习资料</span></a></p><p><a href='https://github.com/brenner8023/gdut-course'><span>广东工业大学计算机学院课程攻略</span></a></p><p>&nbsp;</p><p><a href='https://github.com/chinese-poetry/chinese-poetry'><span>最全中华古诗词数据库</span></a></p><p><a href='https://github.com/pwxcoo/chinese-xinhua'><span>中华新华字典数据库</span></a></p><p><a href='https://github.com/iptv-org/iptv'><span>全球电视直播频道 iptv</span></a></p><p>&nbsp;</p><p><span>... 更多的有趣项目，敬请探索</span></p></blockquote></li><li><p><span>大家也可以关注我的GitHub中的stars（加星收藏的）项目  有许多有趣的项目</span></p><blockquote><p><a href='https://github.com/CandyMuj?tab=stars'><span>我的GitHub stars - CandyMuj</span></a></p></blockquote></li><li><p><span>为什么要学习GitHub</span></p><blockquote><p><span>		</span><span>经过以上所说的可得出为何需要学习GitHub，GitHub是一个可以发现无限可能地方，你可以使用GitHub学习，可以在上面寻找有意思的开源软件，亦可用作私人仓库（云盘），私人博客，云笔记（比什么有道等一众笔记软件好用多了），部署静态网页等。。。</span></p><p><span>		</span><span>无限可能，期待你的探索...</span></p></blockquote></li></ul><p>&nbsp;</p><p><b style = 'color:red'><span>！！！</span><span>*</span><span>*</span><span>*</span><span> 注意 </span><span>*</span><span>*</span><span>*</span><span> ！！！</span></b></p><blockquote><p><span style = 'color:red'><span>GitHub属于国外的网站，且不需要科学手段即可正常访问，但是由于自己的网络原因或其他不可知原因，可能访问较慢！如果使用科学手段即可快速访问，虽然不使用科学手段也可以访问，但是如果使用了科学手段可以使访问速度显著提升。</span></span ></p></blockquote><p>&nbsp;</p><h1><a name="二-git和github" class="md-header-anchor"></a><span>二. Git和GitHub</span></h1><h2><a name="-什么是git" class="md-header-anchor"></a><span>* 什么是Git</span></h2><blockquote><p><em><span>Git</span></em><span> 是目前世界上最先进的开源的分布式版本控制系统（没有之一）。</span></p><p><span>版本控制是指对软件开发过程中各种程序代码、配置文件及说明文档等文件变更的管理，是软件配置管理的核心思想之一。</span></p></blockquote><p>&nbsp;</p><h2><a name="-什么是github" class="md-header-anchor"></a><span>* 什么是GitHub</span></h2><blockquote><p><em><span>GitHub</span></em><span>是一个面向开源及私有软件项目的托管平台，因为只支持git 作为唯一的版本库格式进行托管，故名</span><em><span>GitHub</span></em><span>。</span></p><p><span>简单来说GitHub是基于Git的一个线上仓库，当然他除了Git代码仓库托管及基本的 Web管理界面以外，还提供了订阅、讨论组、文本渲染、在线文件编辑器、协作图谱（报表）、代码片段分享（Gist）等功能。</span></p><p><span>上方所说的同样是Git和GitHub之间的关系</span></p></blockquote><p>&nbsp;</p><h1><a name="三-安装git" class="md-header-anchor"></a><span>三. 安装Git</span></h1><blockquote><p><span>上方说到，GitHub实质是基于Git的一个线上仓库，所以我们需要先使用Git的本地仓库，然后再将我们的本地仓库的内容或变更推送到线上。这也是使用GitHub的最基本的流程。</span></p></blockquote><p>&nbsp;</p><h2><a name="1-下载git" class="md-header-anchor"></a><span>1. 下载Git</span></h2><ul><li><p><span>下载地址：</span><a href='https://git-scm.com/downloads'><span>https://git-scm.com/downloads</span></a></p><p><span>		</span><span>在页面中选择适合自己的版本进行下载，由于我使用的是Windows，且Windows也是大部分人使用的系统，所以我就使用WIndows版本进行讲解。</span></p><p><img src="https://s1.ax1x.com/2020/03/17/8a91Ff.png" referrerpolicy="no-referrer" alt="下载Git"></p></li></ul><p>&nbsp;</p><h2><a name="2-安装git" class="md-header-anchor"></a><span>2. 安装Git</span></h2><ul><li><p><span>下载后直接双击即可安装</span></p><p><img src="https://s1.ax1x.com/2020/03/17/8am2o4.png" referrerpolicy="no-referrer" alt="下载的文件"></p></li><li><p><span>安装过程直接下一步即可</span></p><p><b style = 'color:red'><span>注意：</span></b><span style = 'color:red'><span>除了可修改安装路径，其余的所有选项 </span><strong><span>默认</span></strong><span>即可，请勿修改！！！</span></span></p><p><span>建议只更改第二步（点击了第一个</span><em><span>“Next”</span></em><span>后的那一步），可修改默认的安装位置，也可以不修改，git作为版本控制软件可以即使安装在C盘也是不错的选择</span></p><p><img src="https://s1.ax1x.com/2020/03/17/8am0Wn.png" alt="修改默认安装路径" style="zoom: 80%;" /></p></li></ul><p>&nbsp;</p><h2><a name="3-确认安装是否成功" class="md-header-anchor"></a><span>3. 确认安装是否成功</span></h2><ul><li><p><strong><span>在桌面或资源管理器任意位置右键</span></strong><span>，你会发现右键菜单多了两个如下图的选项，那么你就安装成功了</span></p><p><img src="https://s1.ax1x.com/2020/03/17/8auKgI.png" referrerpolicy="no-referrer" alt="右键菜单"></p></li><li><p><span>您也可以在Windows的命令管理器（cmd）或者直接选择上方右键菜单的&quot;Git Bash Here&quot;打开Git的命令窗口，键入命令 </span><code>git --version</code><span> 如果出现了Git的版本信息（如下图所示）那么是必定安装成功了的</span></p><p><img src="https://s1.ax1x.com/2020/03/17/8aKVs0.png" referrerpolicy="no-referrer" alt="查看Git的版本"></p></li></ul><p>&nbsp;</p><h1><a name="四-配置git-本地设置）" class="md-header-anchor"></a><span>四. 配置Git （本地设置）</span></h1><h2><a name="-配置全局用户名和邮箱" class="md-header-anchor"></a><span>* 配置全局用户名和邮箱</span></h2><h3><a name="--若不进行配置会发生什么的说明" class="md-header-anchor"></a><span>- 若不进行配置会发生什么的说明</span></h3><blockquote><ul><li><span>若不进行配置，那么你在进行本地仓库的提交时都将会报错，并提示你如何设置，如图所示</span></li></ul><p><img src="https://s1.ax1x.com/2020/03/18/80l7VI.png" referrerpolicy="no-referrer" alt="不配置用户名"></p></blockquote><p>&nbsp;</p><h3><a name="--配置步骤" class="md-header-anchor"></a><span>- 配置步骤</span></h3><blockquote><ul><li><span>在右键菜单中选择&quot;Git Bash Here&quot;打开命令窗口依次执行如下几句</span></li></ul><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4.5px; left: 46.5px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 38px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -38px; width: 38px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -38px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 33px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">git config --global user.name "Your Name"</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 33px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">git config --global user.email "you@example.com"</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 44px;"></div><div class="CodeMirror-gutters" style="height: 44px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 41px;"></div></div></div></div></pre><p><span>将</span><strong><code>Your Name</code></strong><span>替换为</span><strong><code>你的英文名</code></strong><span>，可随意填写，建议与GitHub的账号用户名一致</span></p><p><span>将</span><strong><code>you@example.com</code></strong><span>替换为</span><strong><code>你的邮箱</code></strong><span>，可随意填写，建议与GitHub的账号邮箱一致</span></p><p><span>若引号内你所输入的内容，没有空格，那么可省略引号</span></p><p><img src="https://s1.ax1x.com/2020/03/18/80rUmt.png" referrerpolicy="no-referrer" alt="开始配置"></p></blockquote><p>&nbsp;</p><h3><a name="--扩展命令" class="md-header-anchor"></a><span>- 扩展命令</span></h3><blockquote><ul><li><span>扩展命令，查看已有配置</span></li></ul><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4.5px; left: 46.5px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 38px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>6</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -38px; width: 38px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -38px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 33px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">* 查看git配置信息</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 33px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>git config --list</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 33px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">* 查看git用户名</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 33px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>git config user.name</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 33px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">* 查看邮箱配置</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 33px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>git config user.email</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 132px;"></div><div class="CodeMirror-gutters" style="height: 132px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 41px;"></div></div></div></div></pre><p><img src="https://s1.ax1x.com/2020/03/18/80ra0P.png" referrerpolicy="no-referrer" alt="查看配置"></p></blockquote><p>&nbsp;</p><blockquote><p><span style='color:red'><span>说明：</span></span><strong><span>对于本地Git的设置只需要配置好全局的全局的</span><code>用户名</code><span>和</span><code>邮箱</code><span>即可</span></strong></p></blockquote><p>&nbsp;</p><h1><a name="五-配置github-ssh-key关联线上仓库github的线上账号）" class="md-header-anchor"></a><span>五. 配置GitHub SSH key（关联线上仓库GitHub的线上账号）</span></h1><h2><a name="-准备和说明" class="md-header-anchor"></a><span>* 准备和说明</span></h2><ol start='' ><li><p><span>首先你需要一个GitHub的账号（线上账号）</span></p><blockquote><p><span>至于如何注册，我就不赘述了，直接“Sign up”注册一个就行了， 只需要输入用户名、邮箱、密码即可，很简单的，注册时后方的会有一些初始设置，看着选，看着填吧，对于你后续的使用没有什么影响</span></p></blockquote></li><li><p><span>为当前设备</span><code>添加SSHkey</code></p><blockquote><ul><li><span>SSH是一种</span><strong><span>网络协议</span></strong><span>，用于计算机之间的</span><strong><span>加密登录</span></strong><span>，使用这种方式登录是</span><strong><span>安全</span></strong><span>的</span></li><li><span>如果不进行配置，那么你每次推送代码到线上，每次都可能提示你输入账号密码进行登录；但一般情况下，只是首次需要你进行登录，且本次登录以后clone此账号下的其他仓库也将获得权限。</span></li><li><span>使用SSH的配置方式可以一劳永逸，一次配置成功以后，在本设备任意软件内使用Git的ssh链接方式操作都无需登录，将自动使用SSHkey作为认证方式登录，因为使用https的方式是由当前使用的软件保存你的登录凭证，</span><strong><span>是以软件为单位认证</span></strong><span>，而key是</span><strong><span>以设备为单位认证</span></strong><span>，将更加方便。</span></li><li><span>一个设备有且仅需设置一个key即可，除非你把本机已有的key删除了（包括GitHub上的删除和本地的删除），那么才可以再次生成key</span></li><li><span>当然你可以可以选择不配置此key，那么第五这个步骤可</span><strong><span>直接不看</span></strong><span>了，你可以在弹出登录框或提示登录的时候使用用户名密码的方式进行验证，但此方法可能会出现频繁登录的情况，并且凡使用git的软件都需要单独输入账号密码进行认证，这将会很繁琐</span></li></ul></blockquote></li></ol><p>&nbsp;</p><h2><a name="-配置ssh-key步骤" class="md-header-anchor"></a><span>* 配置SSH key步骤</span></h2><ol start='' ><li><p><span>登录你的GitHub账号 进入 </span><a href='https://github.com/login'><span>https://github.com/login</span></a></p></li><li><p><span>进入 </span><a href='https://github.com/settings/keys'><span>https://github.com/settings/keys</span></a></p></li><li><p><span>如果在页面中显示的有key（下图红框位置，这个图就代表没有key），请确认这些key是否正在使用，删除一些没必要存在的key（如果有，那么每一个key后方都有一个</span><code>delete</code><span>按钮，点击即可删除），若没有请看下一步</span></p><p><img src="https://s1.ax1x.com/2020/03/18/8Dw7o8.png" referrerpolicy="no-referrer" alt="查看是否已有key"></p></li><li><p><span>在右键菜单中打开 Git Bash</span></p></li><li><p><span>复制并运行 </span><code>rm -rf ~/.ssh/*</code><span>删除本机已有的所有sshkey，如果有的话他会删除，没有的话他不会做任何更改 </span></p><p><b style='color:red'><span>注意：此命令一定要复制粘贴，且完全一致，如果有任何不同，哪怕是多了个空格，可能都会导致系统崩溃，只能重装系统了</span></b></p></li><li><p><span>复制并运行</span><code>ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</code><span>，将</span><code>your_email@example.com</code><span>替换为</span><code>你的邮箱</code><span>，此邮箱可随意填写你的</span><b style = 'color:red'><span>真实邮箱</span></b><span>，建议填写为你GitHub账号的邮箱</span></p></li><li><p><span>在接下来让你输入内容的时候，直接回车，不要输入任何内容，</span><b style ='color:red'><span>按三次回车</span></b><span>，随后你会看到类似下图的界面</span></p><p><img src="https://s1.ax1x.com/2020/03/18/8DcMDJ.png" referrerpolicy="no-referrer" alt="创建key"></p><blockquote><p><span>当你使用命令 </span><code>ll ~/.ssh</code><span>时会发现生成了如图红框内的两个文件</span></p><p><img src="https://s1.ax1x.com/2020/03/18/8DcmgU.png" referrerpolicy="no-referrer" alt="生成key文件"></p></blockquote></li><li><p><span>再次进入 </span><a href='https://github.com/settings/keys'><span>https://github.com/settings/keys</span></a><span>，并点击右上角的</span><code>New SSH key</code><span>新建一个sshkey（</span><code>SSH keys</code><span>的右边那个按钮）</span></p><p><img src="https://s1.ax1x.com/2020/03/18/8Dgyw9.png" referrerpolicy="no-referrer" alt="点击新建"></p></li><li><p><span>继续执行命令</span><code>cat ~/.ssh/id_rsa.pub</code><span>查看生成的秘钥，你会看到如图所示的一串字符，完整复制这一串字符，下一步会用到</span></p><p><img src="https://s1.ax1x.com/2020/03/18/8DgeII.png" referrerpolicy="no-referrer" alt="查看并复制秘钥"></p></li><li><p><span>按图中所示填入相应内容点击添加即可</span></p><p><img src="https://s1.ax1x.com/2020/03/18/8DRAUA.png" referrerpolicy="no-referrer" alt="添加一个新的key"></p><blockquote><p><span>如果提示输入密码进行验证，那么输入密码进行确认</span></p><p><img src="https://s1.ax1x.com/2020/03/19/8DRr5R.png" referrerpolicy="no-referrer" alt="确认密码"></p></blockquote></li><li><p><span>回到Git Bash，执行</span><code>ssh -T git@github.com</code><span>，测试你的SSH 连接</span></p><blockquote><p><span>你可能会看到类似下方的提示</span></p><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4.5px; left: 46.5px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 38px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>3</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -38px; width: 38px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -38px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 33px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">The authenticity of host 'github.com (IP ADDRESS)' can't be established.</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 33px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 33px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Are you sure you want to continue connecting (yes/no)?</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 110px;"></div><div class="CodeMirror-gutters" style="height: 110px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 41px;"></div></div></div></div></pre><p><span>或者是下方这样的</span></p><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4.5px; left: 46.5px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 38px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>3</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -38px; width: 38px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -38px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 33px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">The authenticity of host 'github.com (IP ADDRESS)' can't be established.</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 33px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 33px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Are you sure you want to continue connecting (yes/no)?</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 110px;"></div><div class="CodeMirror-gutters" style="height: 110px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 41px;"></div></div></div></div></pre><p><span>那么直接键入</span><code>yes</code><span>即可，如果没有出现提示那么就跳过此步，可能</span><strong><span>直接成功</span></strong><span>了，也可能是</span><strong><span>直接失败</span></strong><span>了，下一步说明什么表示</span><strong><span>成功</span></strong><span>，什么表示</span><strong><span>失败</span></strong></p></blockquote></li><li><p><span>如果看到</span><code>Error: Permission denied (publickey)</code><span>就说明失败了，首先你可以多次尝试测试连接（上一步，第11步，因为有时可能是网络原因造成的失败），如果仍然不行，那么请回到</span><strong><span>第一步</span></strong><span>重新开始，如果你看到类似</span><code>Hi username! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code><span>的提示（类似下图）</span></p><p><img src="https://s1.ax1x.com/2020/03/19/8D4CRI.png" referrerpolicy="no-referrer" alt="添加成功"></p><p>&nbsp;</p><p><strong><span>那么就说明你成功了，恭喜你！</span></strong></p><p><strong><span>好了，添加了一SSH key，接下来就会用到它。</span></strong></p><p>&nbsp;</p></li></ol><h2><a name="-总结和说明" class="md-header-anchor"></a><span>* 总结和说明</span></h2><blockquote><ul><li><p><span>一台电脑只需要一个 SSH key</span></p></li><li><p><span>一个 SSH key 可以访问你的所有仓库，即使你有 1000000 个仓库，都没问题</span></p></li><li><p><span>如果你新买了电脑，就在新电脑上重新生成一个 SSH key，把这个 key 也上传到 GitHub，它可以和之前的 key 共存在 GitHub 上</span></p></li><li><p><span>如果你把 key 从电脑上删除了，重新生成一个 key 即可，替换之前的 key</span></p></li><li><p><span>其实此步骤是GitHub官方文档中给出的步骤，只不过我使用更为明了的方式翻译了一下而已，若需查看源步骤可参考以下链接</span></p><p><a href='https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent'><span>生成 - Generating a new SSH key and adding it to the ssh-agent</span></a></p><p><a href='https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account'><span>添加到GitHub - Adding a new SSH key to your GitHub account</span></a></p><p><a href='https://help.github.com/en/github/authenticating-to-github/testing-your-ssh-connection'><span>测试你的SSH连接 - Testing your SSH connection</span></a></p></li></ul></blockquote><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><blockquote><p><span>这个系列的第一篇文章大概就这样结束了，主要介绍了一下GitHub，一些说明以及Git的安装和一些配置</span></p><p><span>现在你已经获取了一个属于自己本设备的SSH key，接下来此系列的第二篇文件将介绍SSH key如何使用，GitHub的基本使用方法等内容，敬请期待...</span></p><p>&nbsp;</p><ul><li><span>最后欢迎大家关注我的GitHub账号 </span><a href='https://github.com/CandyMuj'><span>CandyMuj</span></a></li><li><span>你可以查看 </span><a href='https://github.com/CandyMuj?tab=repositories'><span>我的仓库</span></a><span>，也可以查看我 </span><a href='https://github.com/CandyMuj?tab=stars'><span>Star</span></a><span> 的一些有趣的项目</span></li></ul></blockquote></div>
 </body>
 </html>
